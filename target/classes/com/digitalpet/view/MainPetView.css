@@ -1,0 +1,164 @@
+/* Main Pet View Styles - Following design requirements 6.1, 10.1, 10.3 */
+
+.main-pet-view {
+    -fx-background-color: #F1FAEE;
+    -fx-font-family: "System";
+}
+
+.main-content {
+    -fx-background-color: transparent;
+    -fx-alignment: center;
+}
+
+/* Pet Name Styling */
+.pet-name {
+    -fx-text-fill: #457B9D;
+    -fx-font-weight: bold;
+    -fx-font-size: 24px;
+}
+
+/* Evolution Stage Styling */
+.evolution-stage {
+    -fx-text-fill: #1D3557;
+    -fx-font-size: 18px;
+}
+
+/* Pet Display Area */
+.pet-display {
+    -fx-background-color: #A8DADC;
+    -fx-background-radius: 16px;
+    -fx-border-radius: 16px;
+    -fx-border-color: #457B9D;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);
+}
+
+.pet-placeholder {
+    -fx-text-fill: #1D3557;
+}
+
+/* Mood Display */
+.mood-display {
+    -fx-text-fill: #1D3557;
+    -fx-font-size: 16px;
+}
+
+/* Progress Container */
+.progress-container {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-border-color: #A8DADC;
+    -fx-border-width: 1px;
+    -fx-padding: 16px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 4, 0, 0, 1);
+}
+
+.progress-label {
+    -fx-text-fill: #1D3557;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.progress-text {
+    -fx-text-fill: #457B9D;
+    -fx-font-size: 12px;
+    -fx-min-width: 80px;
+}
+
+/* XP Progress Bar */
+.xp-progress {
+    -fx-accent: #B8E6B8;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+}
+
+.xp-progress .bar {
+    -fx-background-color: #B8E6B8;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+}
+
+.xp-progress .track {
+    -fx-background-color: #E9ECEF;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+}
+
+/* Energy Progress Bar */
+.energy-progress {
+    -fx-accent: #F1C0E8;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+}
+
+.energy-progress .bar {
+    -fx-background-color: linear-gradient(to right, #F1C0E8, #CFBAF0);
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+}
+
+.energy-progress .track {
+    -fx-background-color: #E9ECEF;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+}
+
+/* Bottom Navigation */
+.bottom-navigation {
+    -fx-background-color: white;
+    -fx-border-color: #A8DADC;
+    -fx-border-width: 1px 0 0 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 6, 0, 0, -2);
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #457B9D;
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-min-height: 44px; /* WCAG 2.1 AA minimum touch target */
+    -fx-pref-height: 44px;
+    -fx-cursor: hand;
+}
+
+.nav-button:hover {
+    -fx-background-color: #A8DADC;
+    -fx-text-fill: #1D3557;
+}
+
+.nav-button-active {
+    -fx-background-color: #B8E6B8;
+    -fx-text-fill: #1D3557;
+    -fx-font-weight: bold;
+}
+
+.nav-button-active:hover {
+    -fx-background-color: #B8E6B8;
+    -fx-text-fill: #1D3557;
+}
+
+/* Ensure minimum contrast ratios for accessibility (WCAG 2.1 AA) */
+.progress-label,
+.pet-name,
+.evolution-stage,
+.mood-display {
+    -fx-text-fill: #1D3557; /* High contrast against light backgrounds */
+}
+
+/* Responsive design for different screen sizes */
+@media (max-width: 400px) {
+    .pet-name {
+        -fx-font-size: 20px;
+    }
+    
+    .evolution-stage {
+        -fx-font-size: 16px;
+    }
+    
+    .nav-button {
+        -fx-font-size: 12px;
+    }
+}

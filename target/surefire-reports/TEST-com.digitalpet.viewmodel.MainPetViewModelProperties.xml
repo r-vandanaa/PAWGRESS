@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.digitalpet.service.XPSystemProperties" time="0.258" tests="8" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.digitalpet.viewmodel.MainPetViewModelProperties" time="0.726" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
+    <property name="javafx.runtime.version" value="19.0.2.1+1"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.class.path" value="C:\Users\geeth\PAWGRESS\target\test-classes;C:\Users\geeth\.m2\repository\org\openjfx\javafx-controls\19.0.2.1\javafx-controls-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-graphics\19.0.2.1\javafx-graphics-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-base\19.0.2.1\javafx-base-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-fxml\19.0.2.1\javafx-fxml-19.0.2.1.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik\1.7.4\jqwik-1.7.4.jar;C:\Users\geeth\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-api\1.7.4\jqwik-api-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-web\1.7.4\jqwik-web-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-time\1.7.4\jqwik-time-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-engine\1.7.4\jqwik-engine-1.7.4.jar;C:\Users\geeth\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.2\junit-jupiter-engine-5.9.2.jar;C:\Users\geeth\.m2\repository\org\junit\platform\junit-platform-engine\1.9.2\junit-platform-engine-1.9.2.jar;C:\Users\geeth\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.2\junit-jupiter-api-5.9.2.jar;C:\Users\geeth\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\geeth\.m2\repository\org\junit\platform\junit-platform-commons\1.9.2\junit-platform-commons-1.9.2.jar;C:\Users\geeth\.m2\repository\org\xerial\sqlite-jdbc\3.42.0.0\sqlite-jdbc-3.42.0.0.jar;"/>
@@ -10,13 +11,15 @@
     <property name="user.variant" value=""/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="javafx.version" value="19.0.2.1"/>
     <property name="os.name" value="Windows 11"/>
     <property name="java.vm.specification.version" value="25"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IN"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-25\bin"/>
-    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter C:\Users\geeth\AppData\Local\Temp\surefire12811130535473931858 2026-01-05T00-55-45_343-jvmRun1 surefire-20260105005545585_1tmp surefire_0-20260105005545585_2tmp"/>
+    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter C:\Users\geeth\AppData\Local\Temp\surefire1856875928119402660 2026-01-05T01-32-30_530-jvmRun1 surefire-20260105013230762_1tmp surefire_0-20260105013230762_2tmp"/>
     <property name="jdk.debug" value="release"/>
+    <property name="test" value="MainPetViewModelProperties"/>
     <property name="surefire.test.class.path" value="C:\Users\geeth\PAWGRESS\target\test-classes;C:\Users\geeth\.m2\repository\org\openjfx\javafx-controls\19.0.2.1\javafx-controls-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-graphics\19.0.2.1\javafx-graphics-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-base\19.0.2.1\javafx-base-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-fxml\19.0.2.1\javafx-fxml-19.0.2.1.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik\1.7.4\jqwik-1.7.4.jar;C:\Users\geeth\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-api\1.7.4\jqwik-api-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-web\1.7.4\jqwik-web-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-time\1.7.4\jqwik-time-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-engine\1.7.4\jqwik-engine-1.7.4.jar;C:\Users\geeth\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.2\junit-jupiter-engine-5.9.2.jar;C:\Users\geeth\.m2\repository\org\junit\platform\junit-platform-engine\1.9.2\junit-platform-engine-1.9.2.jar;C:\Users\geeth\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.2\junit-jupiter-api-5.9.2.jar;C:\Users\geeth\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\geeth\.m2\repository\org\junit\platform\junit-platform-commons\1.9.2\junit-platform-commons-1.9.2.jar;C:\Users\geeth\.m2\repository\org\xerial\sqlite-jdbc\3.42.0.0\sqlite-jdbc-3.42.0.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\geeth"/>
@@ -60,136 +63,58 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="Feature: digital-pet-evolution, Property 4: Consistency Score Calculation" classname="com.digitalpet.service.XPSystemProperties" time="0.005">
-    <system-out><![CDATA[timestamp = 2026-01-05T00:55:47.074088200, XPSystemProperties:Feature: digital-pet-evolution, Property 4: Consistency Score Calculation = 
+  <testcase name="XP addition through ViewModel triggers appropriate evolution" classname="com.digitalpet.viewmodel.MainPetViewModelProperties" time="0.394">
+    <system-out><![CDATA[timestamp = 2026-01-05T01:32:31.716549100, MainPetViewModelProperties:XP addition through ViewModel triggers appropriate evolution = 
                               |-----------------------jqwik-----------------------
-tries = 30                    | # of calls to property
-checks = 30                   | # of not rejected calls
-generation = EXHAUSTIVE       | parameters are exhaustively generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 0          | # of all combined edge cases
-edge-cases#tried = 0          | # of edge cases tried in current run
-seed = 1746707015930481003    | random seed to reproduce generated values
-
-
-]]></system-out>
-  </testcase>
-  <testcase name="Feature: digital-pet-evolution, Property 4: XP Calculation Transparency" classname="com.digitalpet.service.XPSystemProperties" time="0.063">
-    <system-out><![CDATA[timestamp = 2026-01-05T00:55:47.138662600, XPSystemProperties:Feature: digital-pet-evolution, Property 4: XP Calculation Transparency = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
+tries = 100                   | # of calls to property
+checks = 100                  | # of not rejected calls
 generation = RANDOMIZED       | parameters are randomly generated
 after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
 when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 5          | # of all combined edge cases
-edge-cases#tried = 5          | # of edge cases tried in current run
-seed = 8608321005787177468    | random seed to reproduce generated values
+edge-cases#total = 40         | # of all combined edge cases
+edge-cases#tried = 12         | # of edge cases tried in current run
+seed = 7750911281761746413    | random seed to reproduce generated values
 
 
 ]]></system-out>
   </testcase>
-  <testcase name="Feature: digital-pet-evolution, Property 5: Evolution Celebration Triggers" classname="com.digitalpet.service.XPSystemProperties" time="0.019">
-    <system-out><![CDATA[timestamp = 2026-01-05T00:55:47.158716400, XPSystemProperties:Feature: digital-pet-evolution, Property 5: Evolution Celebration Triggers = 
+  <testcase name="Property 7: UI Responsiveness and Feedback - Property bindings update immediately when model changes" classname="com.digitalpet.viewmodel.MainPetViewModelProperties" time="0.053">
+    <system-out><![CDATA[timestamp = 2026-01-05T01:32:31.772037800, MainPetViewModelProperties:Property 7: UI Responsiveness and Feedback - Property bindings update immediately when model changes = 
                               |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
+tries = 100                   | # of calls to property
+checks = 100                  | # of not rejected calls
 generation = RANDOMIZED       | parameters are randomly generated
 after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
 when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 20         | # of all combined edge cases
-edge-cases#tried = 20         | # of edge cases tried in current run
-seed = 9198006855424934258    | random seed to reproduce generated values
+edge-cases#total = 100        | # of all combined edge cases
+edge-cases#tried = 12         | # of edge cases tried in current run
+seed = -3098494260467785920   | random seed to reproduce generated values
 
 
 ]]></system-out>
-  </testcase>
-  <testcase name="Feature: digital-pet-evolution, Property 4: XP Calculation Basic Monotonicity" classname="com.digitalpet.service.XPSystemProperties" time="0.045">
-    <system-out><![CDATA[timestamp = 2026-01-05T00:55:47.203876, XPSystemProperties:Feature: digital-pet-evolution, Property 4: XP Calculation Basic Monotonicity = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 25         | # of all combined edge cases
-edge-cases#tried = 25         | # of edge cases tried in current run
-seed = -8404766061533526727   | random seed to reproduce generated values
-
-
-]]></system-out>
-  </testcase>
-  <testcase name="Feature: digital-pet-evolution, Property 4: XP Calculation Edge Cases" classname="com.digitalpet.service.XPSystemProperties" time="0.031">
-    <system-out><![CDATA[timestamp = 2026-01-05T00:55:47.234485500, XPSystemProperties:Feature: digital-pet-evolution, Property 4: XP Calculation Edge Cases = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 5          | # of all combined edge cases
-edge-cases#tried = 5          | # of edge cases tried in current run
-seed = 8822317478179172870    | random seed to reproduce generated values
-
-
-]]></system-out>
-  </testcase>
-  <testcase name="evolutionThresholdsAreProperlyOrdered" classname="com.digitalpet.service.XPSystemProperties" time="0.032">
-    <system-out><![CDATA[timestamp = 2026-01-05T00:55:47.266079500, XPSystemProperties:Feature: digital-pet-evolution, Property 5: Evolution Thresholds Validation = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 0          | # of all combined edge cases
-edge-cases#tried = 0          | # of edge cases tried in current run
-seed = 6904921052662192366    | random seed to reproduce generated values
-
-
-]]></system-out>
-    <system-err><![CDATA[Jan 05, 2026 12:55:47 AM net.jqwik.engine.execution.CheckedProperty maybeWarnOnMultipleTriesWithoutForallParameters
-WARNING: Running Property [XPSystemProperties:Feature: digital-pet-evolution, Property 5: Evolution Thresholds Validation] in container [com.digitalpet.service.XPSystemProperties] without any @ForAll parameters for 1000 tries.
-    Maybe you want to change it into an @Example?
+    <system-err><![CDATA[Jan 05, 2026 1:32:31 AM net.jqwik.engine.properties.RandomizedShrinkablesGenerator logEdgeCasesOutnumberTriesIfApplicable
+INFO: Edge case generation exceeds number of tries. Stopped after 100 generated cases.
 ]]></system-err>
   </testcase>
-  <testcase name="Feature: digital-pet-evolution, Property 5: Evolution Progression Integrity" classname="com.digitalpet.service.XPSystemProperties" time="0.023">
-    <system-out><![CDATA[timestamp = 2026-01-05T00:55:47.290220500, XPSystemProperties:Feature: digital-pet-evolution, Property 5: Evolution Progression Integrity = 
+  <testcase name="Pet interaction handling triggers model updates" classname="com.digitalpet.viewmodel.MainPetViewModelProperties" time="0.265">
+    <system-out><![CDATA[timestamp = 2026-01-05T01:32:32.038499300, MainPetViewModelProperties:Pet interaction handling triggers model updates = 
                               |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
+tries = 100                   | # of calls to property
+checks = 100                  | # of not rejected calls
 generation = RANDOMIZED       | parameters are randomly generated
 after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
 when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 25         | # of all combined edge cases
-edge-cases#tried = 25         | # of edge cases tried in current run
-seed = 1753103172372136247    | random seed to reproduce generated values
+edge-cases#total = 40         | # of all combined edge cases
+edge-cases#tried = 23         | # of edge cases tried in current run
+seed = -1324410992588193981   | random seed to reproduce generated values
 
 
 ]]></system-out>
-  </testcase>
-  <testcase name="Feature: digital-pet-evolution, Property 5: Evolution System Integration" classname="com.digitalpet.service.XPSystemProperties" time="0.036">
-    <system-out><![CDATA[timestamp = 2026-01-05T00:55:47.326819800, XPSystemProperties:Feature: digital-pet-evolution, Property 5: Evolution System Integration = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 5          | # of all combined edge cases
-edge-cases#tried = 5          | # of edge cases tried in current run
-seed = -8543388431386174443   | random seed to reproduce generated values
-
-
-]]></system-out>
+    <system-err><![CDATA[Jan 05, 2026 1:32:31 AM net.jqwik.engine.execution.AfterFailureParametersGenerator logAfterFailureHandling
+INFO: After Failure Handling: SAMPLE_FIRST, Previous Generation: <GenerationInfo(-1324410992588193981, 1, [size=13])>
+]]></system-err>
   </testcase>
 </testsuite>

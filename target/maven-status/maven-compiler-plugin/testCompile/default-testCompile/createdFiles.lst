@@ -1,6 +1,12 @@
 com\digitalpet\service\XPSystemProperties.class
-com\digitalpet\model\DailyHabitsProperties.class
-com\digitalpet\model\package-info.class
+com\digitalpet\service\AnimationEngineProperties.class
+com\digitalpet\viewmodel\MainPetViewModelProperties.class
 com\digitalpet\service\package-info.class
-com\digitalpet\model\EvolutionStageProperties.class
+com\digitalpet\service\PetInteractionSystemProperties.class
 com\digitalpet\model\DigitalPetProperties.class
+com\digitalpet\viewmodel\package-info.class
+com\digitalpet\model\DailyHabitsProperties.class
+com\digitalpet\model\EnvironmentProperties.class
+com\digitalpet\model\package-info.class
+com\digitalpet\service\MoodSystemProperties.class
+com\digitalpet\model\EvolutionStageProperties.class

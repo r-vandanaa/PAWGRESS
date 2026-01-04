@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.digitalpet.service.XPSystemProperties" time="0.258" tests="8" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.digitalpet.service.MoodSystemProperties" time="0.067" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -60,124 +60,88 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="Feature: digital-pet-evolution, Property 4: Consistency Score Calculation" classname="com.digitalpet.service.XPSystemProperties" time="0.005">
-    <system-out><![CDATA[timestamp = 2026-01-05T00:55:47.074088200, XPSystemProperties:Feature: digital-pet-evolution, Property 4: Consistency Score Calculation = 
+  <testcase name="Feature: digital-pet-evolution, Property: Mood smoothing prevents rapid changes" classname="com.digitalpet.service.MoodSystemProperties" time="0.023">
+    <system-out><![CDATA[timestamp = 2026-01-05T00:55:47.024471500, MoodSystemProperties:Feature: digital-pet-evolution, Property: Mood smoothing prevents rapid changes = 
                               |-----------------------jqwik-----------------------
-tries = 30                    | # of calls to property
-checks = 30                   | # of not rejected calls
+tries = 16                    | # of calls to property
+checks = 9                    | # of not rejected calls
 generation = EXHAUSTIVE       | parameters are exhaustively generated
 after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
 when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
 edge-cases#total = 0          | # of all combined edge cases
 edge-cases#tried = 0          | # of edge cases tried in current run
-seed = 1746707015930481003    | random seed to reproduce generated values
+seed = 802329479414712128     | random seed to reproduce generated values
 
 
 ]]></system-out>
   </testcase>
-  <testcase name="Feature: digital-pet-evolution, Property 4: XP Calculation Transparency" classname="com.digitalpet.service.XPSystemProperties" time="0.063">
-    <system-out><![CDATA[timestamp = 2026-01-05T00:55:47.138662600, XPSystemProperties:Feature: digital-pet-evolution, Property 4: XP Calculation Transparency = 
+  <testcase name="Feature: digital-pet-evolution, Property 8: Mood System State Management" classname="com.digitalpet.service.MoodSystemProperties" time="0.004">
+    <system-out><![CDATA[timestamp = 2026-01-05T00:55:47.028465900, MoodSystemProperties:Feature: digital-pet-evolution, Property 8: Mood System State Management = 
                               |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 5          | # of all combined edge cases
-edge-cases#tried = 5          | # of edge cases tried in current run
-seed = 8608321005787177468    | random seed to reproduce generated values
-
-
-]]></system-out>
-  </testcase>
-  <testcase name="Feature: digital-pet-evolution, Property 5: Evolution Celebration Triggers" classname="com.digitalpet.service.XPSystemProperties" time="0.019">
-    <system-out><![CDATA[timestamp = 2026-01-05T00:55:47.158716400, XPSystemProperties:Feature: digital-pet-evolution, Property 5: Evolution Celebration Triggers = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 20         | # of all combined edge cases
-edge-cases#tried = 20         | # of edge cases tried in current run
-seed = 9198006855424934258    | random seed to reproduce generated values
-
-
-]]></system-out>
-  </testcase>
-  <testcase name="Feature: digital-pet-evolution, Property 4: XP Calculation Basic Monotonicity" classname="com.digitalpet.service.XPSystemProperties" time="0.045">
-    <system-out><![CDATA[timestamp = 2026-01-05T00:55:47.203876, XPSystemProperties:Feature: digital-pet-evolution, Property 4: XP Calculation Basic Monotonicity = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 25         | # of all combined edge cases
-edge-cases#tried = 25         | # of edge cases tried in current run
-seed = -8404766061533526727   | random seed to reproduce generated values
-
-
-]]></system-out>
-  </testcase>
-  <testcase name="Feature: digital-pet-evolution, Property 4: XP Calculation Edge Cases" classname="com.digitalpet.service.XPSystemProperties" time="0.031">
-    <system-out><![CDATA[timestamp = 2026-01-05T00:55:47.234485500, XPSystemProperties:Feature: digital-pet-evolution, Property 4: XP Calculation Edge Cases = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 5          | # of all combined edge cases
-edge-cases#tried = 5          | # of edge cases tried in current run
-seed = 8822317478179172870    | random seed to reproduce generated values
-
-
-]]></system-out>
-  </testcase>
-  <testcase name="evolutionThresholdsAreProperlyOrdered" classname="com.digitalpet.service.XPSystemProperties" time="0.032">
-    <system-out><![CDATA[timestamp = 2026-01-05T00:55:47.266079500, XPSystemProperties:Feature: digital-pet-evolution, Property 5: Evolution Thresholds Validation = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
+tries = 8                     | # of calls to property
+checks = 8                    | # of not rejected calls
+generation = EXHAUSTIVE       | parameters are exhaustively generated
 after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
 when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
 edge-cases#total = 0          | # of all combined edge cases
 edge-cases#tried = 0          | # of edge cases tried in current run
-seed = 6904921052662192366    | random seed to reproduce generated values
+seed = 487179095930313742     | random seed to reproduce generated values
 
 
 ]]></system-out>
-    <system-err><![CDATA[Jan 05, 2026 12:55:47 AM net.jqwik.engine.execution.CheckedProperty maybeWarnOnMultipleTriesWithoutForallParameters
-WARNING: Running Property [XPSystemProperties:Feature: digital-pet-evolution, Property 5: Evolution Thresholds Validation] in container [com.digitalpet.service.XPSystemProperties] without any @ForAll parameters for 1000 tries.
-    Maybe you want to change it into an @Example?
-]]></system-err>
   </testcase>
-  <testcase name="Feature: digital-pet-evolution, Property 5: Evolution Progression Integrity" classname="com.digitalpet.service.XPSystemProperties" time="0.023">
-    <system-out><![CDATA[timestamp = 2026-01-05T00:55:47.290220500, XPSystemProperties:Feature: digital-pet-evolution, Property 5: Evolution Progression Integrity = 
+  <testcase name="Feature: digital-pet-evolution, Property: Mood calculation is deterministic" classname="com.digitalpet.service.MoodSystemProperties" time="0.004">
+    <system-out><![CDATA[timestamp = 2026-01-05T00:55:47.032990700, MoodSystemProperties:Feature: digital-pet-evolution, Property: Mood calculation is deterministic = 
                               |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
+tries = 8                     | # of calls to property
+checks = 8                    | # of not rejected calls
+generation = EXHAUSTIVE       | parameters are exhaustively generated
 after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
 when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 25         | # of all combined edge cases
-edge-cases#tried = 25         | # of edge cases tried in current run
-seed = 1753103172372136247    | random seed to reproduce generated values
+edge-cases#total = 0          | # of all combined edge cases
+edge-cases#tried = 0          | # of edge cases tried in current run
+seed = -1958901917827780981   | random seed to reproduce generated values
 
 
 ]]></system-out>
   </testcase>
-  <testcase name="Feature: digital-pet-evolution, Property 5: Evolution System Integration" classname="com.digitalpet.service.XPSystemProperties" time="0.036">
-    <system-out><![CDATA[timestamp = 2026-01-05T00:55:47.326819800, XPSystemProperties:Feature: digital-pet-evolution, Property 5: Evolution System Integration = 
+  <testcase name="Feature: digital-pet-evolution, Property: Mood analysis provides comprehensive information" classname="com.digitalpet.service.MoodSystemProperties" time="0.005">
+    <system-out><![CDATA[timestamp = 2026-01-05T00:55:47.037985200, MoodSystemProperties:Feature: digital-pet-evolution, Property: Mood analysis provides comprehensive information = 
+                              |-----------------------jqwik-----------------------
+tries = 8                     | # of calls to property
+checks = 8                    | # of not rejected calls
+generation = EXHAUSTIVE       | parameters are exhaustively generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 0          | # of all combined edge cases
+edge-cases#tried = 0          | # of edge cases tried in current run
+seed = 7160990884618808085    | random seed to reproduce generated values
+
+
+]]></system-out>
+  </testcase>
+  <testcase name="Feature: digital-pet-evolution, Property: Achievement unlocks trigger celebration" classname="com.digitalpet.service.MoodSystemProperties" time="0.002">
+    <system-out><![CDATA[timestamp = 2026-01-05T00:55:47.040504700, MoodSystemProperties:Feature: digital-pet-evolution, Property: Achievement unlocks trigger celebration = 
+                              |-----------------------jqwik-----------------------
+tries = 4                     | # of calls to property
+checks = 4                    | # of not rejected calls
+generation = EXHAUSTIVE       | parameters are exhaustively generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 0          | # of all combined edge cases
+edge-cases#tried = 0          | # of edge cases tried in current run
+seed = 3702198972143458081    | random seed to reproduce generated values
+
+
+]]></system-out>
+  </testcase>
+  <testcase name="Feature: digital-pet-evolution, Property: Sleep patterns affect mood correctly" classname="com.digitalpet.service.MoodSystemProperties" time="0.025">
+    <system-out><![CDATA[timestamp = 2026-01-05T00:55:47.065569600, MoodSystemProperties:Feature: digital-pet-evolution, Property: Sleep patterns affect mood correctly = 
                               |-----------------------jqwik-----------------------
 tries = 1000                  | # of calls to property
 checks = 1000                 | # of not rejected calls
@@ -187,7 +151,7 @@ when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
 edge-cases#total = 5          | # of all combined edge cases
 edge-cases#tried = 5          | # of edge cases tried in current run
-seed = -8543388431386174443   | random seed to reproduce generated values
+seed = 3690799786153958604    | random seed to reproduce generated values
 
 
 ]]></system-out>

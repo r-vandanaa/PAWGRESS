@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.digitalpet.view.MainPetViewController">
+   <center>
+      <VBox alignment="CENTER" spacing="20.0" styleClass="main-content">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         
+         <!-- Pet Name Display -->
+         <Label fx:id="petNameLabel" styleClass="pet-name" text="My Pet">
+            <font>
+               <Font name="System Bold" size="24.0" />
+            </font>
+         </Label>
+         
+         <!-- Evolution Stage Display -->
+         <Label fx:id="evolutionStageLabel" styleClass="evolution-stage" text="Egg Stage">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Label>
+         
+         <!-- Pet Display Area -->
+         <StackPane fx:id="petDisplayArea" maxHeight="300.0" maxWidth="300.0" minHeight="200.0" minWidth="200.0" prefHeight="250.0" prefWidth="250.0" styleClass="pet-display">
+            <!-- Pet image/animation will be added programmatically -->
+            <Label fx:id="petPlaceholder" text="🥚" styleClass="pet-placeholder">
+               <font>
+                  <Font size="72.0" />
+               </font>
+            </Label>
+         </StackPane>
+         
+         <!-- Mood Display -->
+         <Label fx:id="moodLabel" styleClass="mood-display" text="😐 Neutral">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         
+         <!-- Progress Bars Container -->
+         <VBox spacing="15.0" styleClass="progress-container">
+            <!-- XP Progress Bar -->
+            <VBox spacing="5.0">
+               <Label styleClass="progress-label" text="Experience Progress">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <HBox alignment="CENTER_LEFT" spacing="10.0">
+                  <ProgressBar fx:id="xpProgressBar" maxWidth="1.7976931348623157E308" prefWidth="200.0" progress="0.0" styleClass="xp-progress" HBox.hgrow="ALWAYS" />
+                  <Label fx:id="xpLabel" styleClass="progress-text" text="0 / 100 XP">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+               </HBox>
+            </VBox>
+            
+            <!-- Energy Bar -->
+            <VBox spacing="5.0">
+               <Label styleClass="progress-label" text="Energy Level">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <HBox alignment="CENTER_LEFT" spacing="10.0">
+                  <ProgressBar fx:id="energyProgressBar" maxWidth="1.7976931348623157E308" prefWidth="200.0" progress="0.5" styleClass="energy-progress" HBox.hgrow="ALWAYS" />
+                  <Label fx:id="energyLabel" styleClass="progress-text" text="50 / 100">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+               </HBox>
+            </VBox>
+         </VBox>
+      </VBox>
+   </center>
+   
+   <!-- Bottom Navigation Bar -->
+   <bottom>
+      <HBox fx:id="bottomNavigationBar" alignment="CENTER" spacing="0.0" styleClass="bottom-navigation">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         
+         <Button fx:id="petTabButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPetTabClicked" styleClass="nav-button, nav-button-active" text="Pet" HBox.hgrow="ALWAYS">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+         
+         <Button fx:id="habitsTabButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHabitsTabClicked" styleClass="nav-button" text="Habits" HBox.hgrow="ALWAYS">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+         
+         <Button fx:id="statsTabButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onStatsTabClicked" styleClass="nav-button" text="Stats" HBox.hgrow="ALWAYS">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+         
+         <Button fx:id="achievementsTabButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAchievementsTabClicked" styleClass="nav-button" text="Awards" HBox.hgrow="ALWAYS">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+      </HBox>
+   </bottom>
+   
+   <styleClass>
+      <String fx:value="main-pet-view" />
+   </styleClass>
+</BorderPane>
