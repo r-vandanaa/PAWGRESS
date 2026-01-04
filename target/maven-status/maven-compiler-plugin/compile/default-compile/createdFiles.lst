@@ -1,0 +1,12 @@
+com\digitalpet\model\DailyHabits.class
+com\digitalpet\model\PetMood.class
+com\digitalpet\view\package-info.class
+com\digitalpet\DigitalPetApplication.class
+com\digitalpet\service\package-info.class
+com\digitalpet\model\AchievementCategory.class
+com\digitalpet\viewmodel\package-info.class
+module-info.class
+com\digitalpet\model\DigitalPet.class
+com\digitalpet\model\package-info.class
+com\digitalpet\service\XPSystem.class
+com\digitalpet\model\EvolutionStage.class

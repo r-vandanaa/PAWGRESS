@@ -1,0 +1,4 @@
+--patch-module
+digitalpet=_
+--add-reads
+digitalpet=ALL-UNNAMED
