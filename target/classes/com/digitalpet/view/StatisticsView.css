@@ -1,0 +1,263 @@
+/* Statistics View Styles */
+
+/* Header Styles */
+.header-section {
+    -fx-background-color: #F1FAEE;
+    -fx-background-radius: 0 0 16 16;
+    -fx-border-color: #A8DADC;
+    -fx-border-width: 0 0 2 0;
+}
+
+.page-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1D3557;
+}
+
+.page-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #457B9D;
+}
+
+/* Time Range Selector */
+.time-range-selector {
+    -fx-background-color: #F1FAEE;
+    -fx-padding: 8 16 16 16;
+}
+
+.time-range-selector .toggle-button {
+    -fx-background-color: #A8DADC;
+    -fx-text-fill: #1D3557;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: transparent;
+    -fx-border-width: 2;
+    -fx-padding: 8 16 8 16;
+    -fx-font-size: 14px;
+    -fx-min-width: 80px;
+}
+
+.time-range-selector .toggle-button:selected {
+    -fx-background-color: #457B9D;
+    -fx-text-fill: #F1FAEE;
+    -fx-border-color: #1D3557;
+}
+
+.time-range-selector .toggle-button:hover {
+    -fx-background-color: #B8E6B8;
+}
+
+.time-range-selector .toggle-button:selected:hover {
+    -fx-background-color: #1D3557;
+}
+
+/* Chart Sections */
+.chart-section {
+    -fx-background-color: #F1FAEE;
+    -fx-background-radius: 16;
+    -fx-border-color: #A8DADC;
+    -fx-border-width: 2;
+    -fx-border-radius: 16;
+    -fx-padding: 16;
+    -fx-spacing: 12;
+}
+
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1D3557;
+}
+
+.chart-summary {
+    -fx-font-size: 14px;
+    -fx-text-fill: #457B9D;
+    -fx-font-style: italic;
+}
+
+/* Chart Styling */
+.chart {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.chart-plot-background {
+    -fx-background-color: #F1FAEE;
+}
+
+.chart-vertical-grid-lines {
+    -fx-stroke: #A8DADC;
+    -fx-stroke-width: 1;
+}
+
+.chart-horizontal-grid-lines {
+    -fx-stroke: #A8DADC;
+    -fx-stroke-width: 1;
+}
+
+.axis {
+    -fx-tick-label-fill: #457B9D;
+    -fx-font-size: 12px;
+}
+
+.axis-label {
+    -fx-text-fill: #1D3557;
+    -fx-font-size: 14px;
+}
+
+/* Line Chart Styling */
+.chart-series-line {
+    -fx-stroke: #457B9D;
+    -fx-stroke-width: 3;
+}
+
+.chart-line-symbol {
+    -fx-background-color: #457B9D;
+    -fx-background-radius: 4;
+}
+
+/* Bar Chart Styling */
+.default-color0.chart-bar {
+    -fx-bar-fill: #B8E6B8; /* Excellent - Green */
+}
+
+.default-color1.chart-bar {
+    -fx-bar-fill: #A8DADC; /* Good - Blue */
+}
+
+.default-color2.chart-bar {
+    -fx-bar-fill: #F1C0C0; /* Needs Improvement - Light Red */
+}
+
+/* Legend Styling */
+.legend-container {
+    -fx-padding: 8 0 0 0;
+}
+
+.legend-excellent {
+    -fx-text-fill: #B8E6B8;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.legend-good {
+    -fx-text-fill: #A8DADC;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.legend-needs-improvement {
+    -fx-text-fill: #F1C0C0;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* Mood Timeline Styling */
+.mood-timeline {
+    -fx-background-color: #F1FAEE;
+    -fx-background-radius: 8;
+    -fx-border-color: #A8DADC;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-padding: 12;
+}
+
+.mood-timeline-item {
+    -fx-background-color: #A8DADC;
+    -fx-background-radius: 8;
+    -fx-padding: 8 12 8 12;
+    -fx-spacing: 8;
+}
+
+.mood-timeline-date {
+    -fx-font-size: 12px;
+    -fx-text-fill: #457B9D;
+    -fx-font-weight: bold;
+}
+
+.mood-timeline-mood {
+    -fx-font-size: 14px;
+    -fx-text-fill: #1D3557;
+}
+
+.mood-timeline-indicator {
+    -fx-background-radius: 50%;
+    -fx-min-width: 12px;
+    -fx-min-height: 12px;
+    -fx-max-width: 12px;
+    -fx-max-height: 12px;
+}
+
+.mood-happy .mood-timeline-indicator {
+    -fx-background-color: #FFD700; /* Gold */
+}
+
+.mood-neutral .mood-timeline-indicator {
+    -fx-background-color: #A8DADC; /* Light Blue */
+}
+
+.mood-sleepy .mood-timeline-indicator {
+    -fx-background-color: #E6E6FA; /* Lavender */
+}
+
+.mood-worried .mood-timeline-indicator {
+    -fx-background-color: #F08080; /* Light Coral */
+}
+
+.mood-celebrating .mood-timeline-indicator {
+    -fx-background-color: #32CD32; /* Lime Green */
+}
+
+/* Bottom Navigation */
+.bottom-navigation {
+    -fx-background-color: #F1FAEE;
+    -fx-border-color: #A8DADC;
+    -fx-border-width: 2 0 0 0;
+    -fx-padding: 8;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #457B9D;
+    -fx-font-size: 14px;
+    -fx-padding: 12 8 12 8;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-min-height: 44px;
+    -fx-max-height: 44px;
+}
+
+.nav-button:hover {
+    -fx-background-color: #A8DADC;
+    -fx-text-fill: #1D3557;
+}
+
+.nav-button-active {
+    -fx-background-color: #457B9D;
+    -fx-text-fill: #F1FAEE;
+    -fx-font-weight: bold;
+}
+
+.nav-button-active:hover {
+    -fx-background-color: #1D3557;
+}
+
+/* Accessibility */
+.nav-button:focused,
+.toggle-button:focused {
+    -fx-border-color: #1D3557;
+    -fx-border-width: 2;
+}
+
+/* Scrollpane styling */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .content {
+    -fx-background-color: transparent;
+}

@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.digitalpet.service.PetInteractionSystemProperties" time="1.109" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.digitalpet.service.PetInteractionSystemProperties" time="0.061" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="javafx.runtime.version" value="19.0.2.1+1"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\geeth\PAWGRESS\target\test-classes;C:\Users\geeth\.m2\repository\org\openjfx\javafx-controls\19.0.2.1\javafx-controls-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-graphics\19.0.2.1\javafx-graphics-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-base\19.0.2.1\javafx-base-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-fxml\19.0.2.1\javafx-fxml-19.0.2.1.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik\1.7.4\jqwik-1.7.4.jar;C:\Users\geeth\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-api\1.7.4\jqwik-api-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-web\1.7.4\jqwik-web-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-time\1.7.4\jqwik-time-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-engine\1.7.4\jqwik-engine-1.7.4.jar;C:\Users\geeth\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.2\junit-jupiter-engine-5.9.2.jar;C:\Users\geeth\.m2\repository\org\junit\platform\junit-platform-engine\1.9.2\junit-platform-engine-1.9.2.jar;C:\Users\geeth\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.2\junit-jupiter-api-5.9.2.jar;C:\Users\geeth\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\geeth\.m2\repository\org\junit\platform\junit-platform-commons\1.9.2\junit-platform-commons-1.9.2.jar;C:\Users\geeth\.m2\repository\org\xerial\sqlite-jdbc\3.42.0.0\sqlite-jdbc-3.42.0.0.jar;"/>
+    <property name="java.class.path" value="C:\Users\geeth\PAWGRESS\target\test-classes;C:\Users\geeth\.m2\repository\org\openjfx\javafx-controls\19.0.2.1\javafx-controls-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-graphics\19.0.2.1\javafx-graphics-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-base\19.0.2.1\javafx-base-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-fxml\19.0.2.1\javafx-fxml-19.0.2.1.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik\1.7.4\jqwik-1.7.4.jar;C:\Users\geeth\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-api\1.7.4\jqwik-api-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-web\1.7.4\jqwik-web-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-time\1.7.4\jqwik-time-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-engine\1.7.4\jqwik-engine-1.7.4.jar;C:\Users\geeth\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.2\junit-jupiter-engine-5.9.2.jar;C:\Users\geeth\.m2\repository\org\junit\platform\junit-platform-engine\1.9.2\junit-platform-engine-1.9.2.jar;C:\Users\geeth\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.2\junit-jupiter-api-5.9.2.jar;C:\Users\geeth\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\geeth\.m2\repository\org\junit\platform\junit-platform-commons\1.9.2\junit-platform-commons-1.9.2.jar;C:\Users\geeth\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.2\junit-jupiter-params-5.9.2.jar;C:\Users\geeth\.m2\repository\org\xerial\sqlite-jdbc\3.42.0.0\sqlite-jdbc-3.42.0.0.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="user.timezone" value="Asia/Calcutta"/>
-    <property name="javafx.version" value="19.0.2.1"/>
     <property name="os.name" value="Windows 11"/>
     <property name="java.vm.specification.version" value="25"/>
+    <property name="javafx.version" value="19.0.2.1"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IN"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-25\bin"/>
-    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter C:\Users\geeth\AppData\Local\Temp\surefire8448493009208343012 2026-01-05T01-13-03_190-jvmRun1 surefire-20260105011303662_1tmp surefire_0-20260105011303662_2tmp"/>
+    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter C:\Users\geeth\AppData\Local\Temp\surefire942652580480226911 2026-01-05T01-48-01_102-jvmRun1 surefire-20260105014801349_1tmp surefire_0-20260105014801349_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="PetInteractionSystemProperties"/>
-    <property name="surefire.test.class.path" value="C:\Users\geeth\PAWGRESS\target\test-classes;C:\Users\geeth\.m2\repository\org\openjfx\javafx-controls\19.0.2.1\javafx-controls-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-graphics\19.0.2.1\javafx-graphics-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-base\19.0.2.1\javafx-base-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-fxml\19.0.2.1\javafx-fxml-19.0.2.1.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik\1.7.4\jqwik-1.7.4.jar;C:\Users\geeth\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-api\1.7.4\jqwik-api-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-web\1.7.4\jqwik-web-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-time\1.7.4\jqwik-time-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-engine\1.7.4\jqwik-engine-1.7.4.jar;C:\Users\geeth\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.2\junit-jupiter-engine-5.9.2.jar;C:\Users\geeth\.m2\repository\org\junit\platform\junit-platform-engine\1.9.2\junit-platform-engine-1.9.2.jar;C:\Users\geeth\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.2\junit-jupiter-api-5.9.2.jar;C:\Users\geeth\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\geeth\.m2\repository\org\junit\platform\junit-platform-commons\1.9.2\junit-platform-commons-1.9.2.jar;C:\Users\geeth\.m2\repository\org\xerial\sqlite-jdbc\3.42.0.0\sqlite-jdbc-3.42.0.0.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Users\geeth\PAWGRESS\target\test-classes;C:\Users\geeth\.m2\repository\org\openjfx\javafx-controls\19.0.2.1\javafx-controls-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-graphics\19.0.2.1\javafx-graphics-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-base\19.0.2.1\javafx-base-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-fxml\19.0.2.1\javafx-fxml-19.0.2.1.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik\1.7.4\jqwik-1.7.4.jar;C:\Users\geeth\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-api\1.7.4\jqwik-api-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-web\1.7.4\jqwik-web-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-time\1.7.4\jqwik-time-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-engine\1.7.4\jqwik-engine-1.7.4.jar;C:\Users\geeth\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.2\junit-jupiter-engine-5.9.2.jar;C:\Users\geeth\.m2\repository\org\junit\platform\junit-platform-engine\1.9.2\junit-platform-engine-1.9.2.jar;C:\Users\geeth\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.2\junit-jupiter-api-5.9.2.jar;C:\Users\geeth\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\geeth\.m2\repository\org\junit\platform\junit-platform-commons\1.9.2\junit-platform-commons-1.9.2.jar;C:\Users\geeth\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.2\junit-jupiter-params-5.9.2.jar;C:\Users\geeth\.m2\repository\org\xerial\sqlite-jdbc\3.42.0.0\sqlite-jdbc-3.42.0.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\geeth"/>
     <property name="user.language" value="en"/>
@@ -34,7 +33,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\geeth\.m2\repository\org\apache\maven\surefire\surefire-booter\3.0.0\surefire-booter-3.0.0.jar;C:\Users\geeth\.m2\repository\org\apache\maven\surefire\surefire-api\3.0.0\surefire-api-3.0.0.jar;C:\Users\geeth\.m2\repository\org\apache\maven\surefire\surefire-extensions-spi\3.0.0\surefire-extensions-spi-3.0.0.jar;C:\Users\geeth\.m2\repository\org\apache\maven\surefire\surefire-logger-api\3.0.0\surefire-logger-api-3.0.0.jar;C:\Users\geeth\.m2\repository\org\apache\maven\surefire\surefire-shared-utils\3.0.0\surefire-shared-utils-3.0.0.jar;C:\Users\geeth\PAWGRESS\target\test-classes;C:\Users\geeth\.m2\repository\org\openjfx\javafx-controls\19.0.2.1\javafx-controls-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-graphics\19.0.2.1\javafx-graphics-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-base\19.0.2.1\javafx-base-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-fxml\19.0.2.1\javafx-fxml-19.0.2.1.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik\1.7.4\jqwik-1.7.4.jar;C:\Users\geeth\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-api\1.7.4\jqwik-api-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-web\1.7.4\jqwik-web-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-time\1.7.4\jqwik-time-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-engine\1.7.4\jqwik-engine-1.7.4.jar;C:\Users\geeth\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.2\junit-jupiter-engine-5.9.2.jar;C:\Users\geeth\.m2\repository\org\junit\platform\junit-platform-engine\1.9.2\junit-platform-engine-1.9.2.jar;C:\Users\geeth\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.2\junit-jupiter-api-5.9.2.jar;C:\Users\geeth\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\geeth\.m2\repository\org\junit\platform\junit-platform-commons\1.9.2\junit-platform-commons-1.9.2.jar;C:\Users\geeth\.m2\repository\org\xerial\sqlite-jdbc\3.42.0.0\sqlite-jdbc-3.42.0.0.jar;C:\Users\geeth\.m2\repository\org\apache\maven\surefire\surefire-junit-platform\3.0.0\surefire-junit-platform-3.0.0.jar;C:\Users\geeth\.m2\repository\org\apache\maven\surefire\common-java5\3.0.0\common-java5-3.0.0.jar;C:\Users\geeth\.m2\repository\org\junit\platform\junit-platform-launcher\1.9.2\junit-platform-launcher-1.9.2.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\geeth\.m2\repository\org\apache\maven\surefire\surefire-booter\3.0.0\surefire-booter-3.0.0.jar;C:\Users\geeth\.m2\repository\org\apache\maven\surefire\surefire-api\3.0.0\surefire-api-3.0.0.jar;C:\Users\geeth\.m2\repository\org\apache\maven\surefire\surefire-extensions-spi\3.0.0\surefire-extensions-spi-3.0.0.jar;C:\Users\geeth\.m2\repository\org\apache\maven\surefire\surefire-logger-api\3.0.0\surefire-logger-api-3.0.0.jar;C:\Users\geeth\.m2\repository\org\apache\maven\surefire\surefire-shared-utils\3.0.0\surefire-shared-utils-3.0.0.jar;C:\Users\geeth\PAWGRESS\target\test-classes;C:\Users\geeth\.m2\repository\org\openjfx\javafx-controls\19.0.2.1\javafx-controls-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-graphics\19.0.2.1\javafx-graphics-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-base\19.0.2.1\javafx-base-19.0.2.1.jar;C:\Users\geeth\.m2\repository\org\openjfx\javafx-fxml\19.0.2.1\javafx-fxml-19.0.2.1.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik\1.7.4\jqwik-1.7.4.jar;C:\Users\geeth\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-api\1.7.4\jqwik-api-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-web\1.7.4\jqwik-web-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-time\1.7.4\jqwik-time-1.7.4.jar;C:\Users\geeth\.m2\repository\net\jqwik\jqwik-engine\1.7.4\jqwik-engine-1.7.4.jar;C:\Users\geeth\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.2\junit-jupiter-engine-5.9.2.jar;C:\Users\geeth\.m2\repository\org\junit\platform\junit-platform-engine\1.9.2\junit-platform-engine-1.9.2.jar;C:\Users\geeth\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.2\junit-jupiter-api-5.9.2.jar;C:\Users\geeth\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\geeth\.m2\repository\org\junit\platform\junit-platform-commons\1.9.2\junit-platform-commons-1.9.2.jar;C:\Users\geeth\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.2\junit-jupiter-params-5.9.2.jar;C:\Users\geeth\.m2\repository\org\xerial\sqlite-jdbc\3.42.0.0\sqlite-jdbc-3.42.0.0.jar;C:\Users\geeth\.m2\repository\org\apache\maven\surefire\surefire-junit-platform\3.0.0\surefire-junit-platform-3.0.0.jar;C:\Users\geeth\.m2\repository\org\apache\maven\surefire\common-java5\3.0.0\common-java5-3.0.0.jar;C:\Users\geeth\.m2\repository\org\junit\platform\junit-platform-launcher\1.9.2\junit-platform-launcher-1.9.2.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="25.0.1+8-LTS-27"/>
@@ -63,8 +62,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="Celebration Cooldown - Prevents celebration spam" classname="com.digitalpet.service.PetInteractionSystemProperties" time="0.806">
-    <system-out><![CDATA[timestamp = 2026-01-05T01:13:05.772074400, PetInteractionSystemProperties:Celebration Cooldown - Prevents celebration spam = 
+  <testcase name="Celebration Cooldown - Prevents celebration spam" classname="com.digitalpet.service.PetInteractionSystemProperties" time="0.012">
+    <system-out><![CDATA[timestamp = 2026-01-05T01:48:04.181360, PetInteractionSystemProperties:Celebration Cooldown - Prevents celebration spam = 
                               |-----------------------jqwik-----------------------
 tries = 4                     | # of calls to property
 checks = 4                    | # of not rejected calls
@@ -74,13 +73,13 @@ when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
 edge-cases#total = 0          | # of all combined edge cases
 edge-cases#tried = 0          | # of edge cases tried in current run
-seed = -8410776988831644726   | random seed to reproduce generated values
+seed = -1775680167124789555   | random seed to reproduce generated values
 
 
 ]]></system-out>
   </testcase>
-  <testcase name="Disabled Interaction Handling - No response when interactions disabled" classname="com.digitalpet.service.PetInteractionSystemProperties" time="0.037">
-    <system-out><![CDATA[timestamp = 2026-01-05T01:13:05.813183700, PetInteractionSystemProperties:Disabled Interaction Handling - No response when interactions disabled = 
+  <testcase name="Disabled Interaction Handling - No response when interactions disabled" classname="com.digitalpet.service.PetInteractionSystemProperties" time="0.01">
+    <system-out><![CDATA[timestamp = 2026-01-05T01:48:04.191349200, PetInteractionSystemProperties:Disabled Interaction Handling - No response when interactions disabled = 
                               |-----------------------jqwik-----------------------
 tries = 25                    | # of calls to property
 checks = 25                   | # of not rejected calls
@@ -90,13 +89,13 @@ when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
 edge-cases#total = 0          | # of all combined edge cases
 edge-cases#tried = 0          | # of edge cases tried in current run
-seed = 1770076054003784166    | random seed to reproduce generated values
+seed = 214886395320535521     | random seed to reproduce generated values
 
 
 ]]></system-out>
   </testcase>
-  <testcase name="Pet Interaction Energy Boost - Energy increases with interaction" classname="com.digitalpet.service.PetInteractionSystemProperties" time="0.211">
-    <system-out><![CDATA[timestamp = 2026-01-05T01:13:06.025984500, PetInteractionSystemProperties:Pet Interaction Energy Boost - Energy increases with interaction = 
+  <testcase name="Pet Interaction Energy Boost - Energy increases with interaction" classname="com.digitalpet.service.PetInteractionSystemProperties" time="0.033">
+    <system-out><![CDATA[timestamp = 2026-01-05T01:48:04.225349600, PetInteractionSystemProperties:Pet Interaction Energy Boost - Energy increases with interaction = 
                               |-----------------------jqwik-----------------------
 tries = 100                   | # of calls to property
 checks = 100                  | # of not rejected calls
@@ -105,14 +104,14 @@ after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
 when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
 edge-cases#total = 10         | # of all combined edge cases
-edge-cases#tried = 9          | # of edge cases tried in current run
-seed = -7865953072726235340   | random seed to reproduce generated values
+edge-cases#tried = 10         | # of edge cases tried in current run
+seed = -8227062392314794230   | random seed to reproduce generated values
 
 
 ]]></system-out>
   </testcase>
-  <testcase name="Interactive Response Consistency - Pet responds to clicks within 0.5 seconds across all states" classname="com.digitalpet.service.PetInteractionSystemProperties" time="0.013">
-    <system-out><![CDATA[timestamp = 2026-01-05T01:13:06.040556, PetInteractionSystemProperties:Interactive Response Consistency - Pet responds to clicks within 0.5 seconds across all states = 
+  <testcase name="Interactive Response Consistency - Pet responds to clicks within 0.5 seconds across all states" classname="com.digitalpet.service.PetInteractionSystemProperties" time="0.004">
+    <system-out><![CDATA[timestamp = 2026-01-05T01:48:04.230349700, PetInteractionSystemProperties:Interactive Response Consistency - Pet responds to clicks within 0.5 seconds across all states = 
                               |-----------------------jqwik-----------------------
 tries = 25                    | # of calls to property
 checks = 25                   | # of not rejected calls
@@ -122,7 +121,7 @@ when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
 edge-cases#total = 0          | # of all combined edge cases
 edge-cases#tried = 0          | # of edge cases tried in current run
-seed = -8738950162535461264   | random seed to reproduce generated values
+seed = 8155052422224123517    | random seed to reproduce generated values
 
 
 ]]></system-out>
