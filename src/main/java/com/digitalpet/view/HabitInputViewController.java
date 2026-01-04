@@ -1,6 +1,7 @@
 package com.digitalpet.view;
 
 import com.digitalpet.model.DailyHabits;
+import com.digitalpet.service.AccessibilityService;
 import com.digitalpet.viewmodel.HabitInputViewModel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -72,6 +73,7 @@ public class HabitInputViewController implements Initializable {
         setupSliders();
         setupPropertyBindings();
         setupValidation();
+        setupAccessibility();
         updateNavigationState();
     }
     
@@ -299,6 +301,107 @@ public class HabitInputViewController implements Initializable {
         sleepHoursValue.setText("0.0 hours");
         moneySpentValue.setText("$0.00");
         goalsCompletedValue.setText("0 goals");
+    }
+    
+    /**
+     * Sets up accessibility features for all UI elements
+     * Requirements: 6.5, 10.2, 10.5, 9.5
+     */
+    private void setupAccessibility() {
+        // Enhance sliders with accessibility features
+        AccessibilityService.enhanceSliderAccessibility(studyHoursSlider, 
+            "Study hours slider", 0, 16);
+        AccessibilityService.enhanceSliderAccessibility(waterIntakeSlider, 
+            "Water intake slider in liters", 0, 5.0);
+        AccessibilityService.enhanceSliderAccessibility(stepsTakenSlider, 
+            "Steps taken slider", 0, 50000);
+        AccessibilityService.enhanceSliderAccessibility(sleepHoursSlider, 
+            "Sleep hours slider", 0, 24.0);
+        AccessibilityService.enhanceSliderAccessibility(moneySpentSlider, 
+            "Money spent slider in dollars", 0, 1000);
+        AccessibilityService.enhanceSliderAccessibility(goalsCompletedSlider, 
+            "Goals completed slider", 0, 10);
+        
+        // Enhance value display labels
+        AccessibilityService.enhanceLabelAccessibility(studyHoursValue, "Study hours value");
+        AccessibilityService.enhanceLabelAccessibility(waterIntakeValue, "Water intake value");
+        AccessibilityService.enhanceLabelAccessibility(stepsTakenValue, "Steps taken value");
+        AccessibilityService.enhanceLabelAccessibility(sleepHoursValue, "Sleep hours value");
+        AccessibilityService.enhanceLabelAccessibility(moneySpentValue, "Money spent value");
+        AccessibilityService.enhanceLabelAccessibility(goalsCompletedValue, "Goals completed value");
+        
+        // Enhance error message labels
+        studyHoursError.setAccessibleRole(javafx.scene.AccessibleRole.TEXT);
+        waterIntakeError.setAccessibleRole(javafx.scene.AccessibleRole.TEXT);
+        stepsTakenError.setAccessibleRole(javafx.scene.AccessibleRole.TEXT);
+        sleepHoursError.setAccessibleRole(javafx.scene.AccessibleRole.TEXT);
+        moneySpentError.setAccessibleRole(javafx.scene.AccessibleRole.TEXT);
+        goalsCompletedError.setAccessibleRole(javafx.scene.AccessibleRole.TEXT);
+        
+        // Enhance submit button
+        AccessibilityService.enhanceButtonAccessibility(submitButton, 
+            "Submit daily habits and update pet progress");
+        
+        // Enhance navigation buttons
+        AccessibilityService.enhanceButtonAccessibility(petTabButton, "Navigate to pet view");
+        AccessibilityService.enhanceButtonAccessibility(habitsTabButton, "Daily habits input - currently active");
+        AccessibilityService.enhanceButtonAccessibility(statsTabButton, "Navigate to statistics view");
+        AccessibilityService.enhanceButtonAccessibility(achievementsTabButton, "Navigate to achievements view");
+        
+        // Enhance feedback messages
+        confirmationMessage.setAccessibleRole(javafx.scene.AccessibleRole.TEXT);
+        xpGainMessage.setAccessibleRole(javafx.scene.AccessibleRole.TEXT);
+        
+        // Set up dynamic accessibility updates
+        setupDynamicAccessibilityUpdates();
+    }
+    
+    /**
+     * Sets up dynamic accessibility updates for slider values and validation
+     */
+    private void setupDynamicAccessibilityUpdates() {
+        // Update slider accessibility text when values change
+        studyHoursSlider.valueProperty().addListener((obs, oldVal, newVal) -> {
+            int hours = newVal.intValue();
+            studyHoursSlider.setAccessibleHelp(String.format("Study hours: %d %s", 
+                hours, hours == 1 ? "hour" : "hours"));
+        });
+        
+        waterIntakeSlider.valueProperty().addListener((obs, oldVal, newVal) -> {
+            double liters = newVal.doubleValue();
+            waterIntakeSlider.setAccessibleHelp(String.format("Water intake: %.1f liters", liters));
+        });
+        
+        stepsTakenSlider.valueProperty().addListener((obs, oldVal, newVal) -> {
+            int steps = newVal.intValue();
+            stepsTakenSlider.setAccessibleHelp(String.format("Steps taken: %,d steps", steps));
+        });
+        
+        sleepHoursSlider.valueProperty().addListener((obs, oldVal, newVal) -> {
+            double hours = newVal.doubleValue();
+            sleepHoursSlider.setAccessibleHelp(String.format("Sleep hours: %.1f %s", 
+                hours, hours == 1.0 ? "hour" : "hours"));
+        });
+        
+        moneySpentSlider.valueProperty().addListener((obs, oldVal, newVal) -> {
+            double money = newVal.doubleValue();
+            moneySpentSlider.setAccessibleHelp(String.format("Money spent: $%.2f", money));
+        });
+        
+        goalsCompletedSlider.valueProperty().addListener((obs, oldVal, newVal) -> {
+            int goals = newVal.intValue();
+            goalsCompletedSlider.setAccessibleHelp(String.format("Goals completed: %d %s", 
+                goals, goals == 1 ? "goal" : "goals"));
+        });
+        
+        // Update submit button accessibility based on validation state
+        submitButton.disabledProperty().addListener((obs, wasDisabled, isDisabled) -> {
+            if (isDisabled) {
+                submitButton.setAccessibleHelp("Submit button disabled due to validation errors. Please correct the highlighted fields.");
+            } else {
+                submitButton.setAccessibleHelp("Submit daily habits and update pet progress");
+            }
+        });
     }
     
     /**

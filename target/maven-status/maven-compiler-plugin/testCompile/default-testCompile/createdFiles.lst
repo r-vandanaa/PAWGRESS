@@ -1,6 +1,7 @@
 com\digitalpet\service\XPSystemProperties.class
 com\digitalpet\service\AnimationEngineProperties.class
 com\digitalpet\service\DigitalPetDAOTest.class
+com\digitalpet\service\AccessibilityComplianceProperties$MockUIElement.class
 com\digitalpet\viewmodel\MainPetViewModelProperties.class
 com\digitalpet\service\package-info.class
 com\digitalpet\service\AchievementCelebrationProperties.class
@@ -10,9 +11,11 @@ com\digitalpet\service\DataExportImportServiceTest.class
 com\digitalpet\model\DigitalPetProperties.class
 com\digitalpet\service\LocalDataStorageTest.class
 com\digitalpet\viewmodel\HabitInputViewModelTest.class
+com\digitalpet\service\VisualDesignConsistencyProperties.class
 com\digitalpet\viewmodel\package-info.class
 com\digitalpet\viewmodel\StatisticsViewModelProperties.class
 com\digitalpet\model\DailyHabitsProperties.class
+com\digitalpet\service\AccessibilityComplianceProperties.class
 com\digitalpet\model\EnvironmentProperties.class
 com\digitalpet\model\package-info.class
 com\digitalpet\service\MoodSystemProperties.class

@@ -54,6 +54,7 @@ com\digitalpet\service\PetInteractionSystem.class
 com\digitalpet\model\Environment$MoodEffectConfig.class
 com\digitalpet\model\AchievementCategory.class
 com\digitalpet\model\Environment.class
+com\digitalpet\service\AccessibilityService.class
 com\digitalpet\view\AchievementViewController.class
 com\digitalpet\view\HabitInputViewController.class
 com\digitalpet\service\AnimationEngine.class

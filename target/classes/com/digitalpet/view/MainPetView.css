@@ -1,8 +1,10 @@
 /* Main Pet View Styles - Following design requirements 6.1, 10.1, 10.3 */
+@import "DesignSystem.css";
 
 .main-pet-view {
     -fx-background-color: #F1FAEE;
     -fx-font-family: "System";
+    -fx-font-size: 14px; /* Minimum font size for accessibility */
 }
 
 .main-content {
@@ -62,7 +64,7 @@
 
 .progress-text {
     -fx-text-fill: #457B9D;
-    -fx-font-size: 12px;
+    -fx-font-size: 14px; /* Increased from 12px for accessibility */
     -fx-min-width: 80px;
 }
 
@@ -127,6 +129,12 @@
 .nav-button:hover {
     -fx-background-color: #A8DADC;
     -fx-text-fill: #1D3557;
+}
+
+.nav-button:focused {
+    -fx-border-color: #B8E6B8;
+    -fx-border-width: 3px;
+    -fx-effect: dropshadow(gaussian, #B8E6B8, 6, 0.5, 0, 0);
 }
 
 .nav-button-active {

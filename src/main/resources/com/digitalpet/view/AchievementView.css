@@ -1,8 +1,10 @@
 /* Achievement View Styles - Following design requirements 8.1, 8.2, 8.5, 10.1, 10.3 */
+@import "DesignSystem.css";
 
 .achievement-view {
     -fx-background-color: #F1FAEE;
     -fx-font-family: "System";
+    -fx-font-size: 14px; /* Minimum font size for accessibility */
 }
 
 .main-content {

@@ -1,7 +1,9 @@
 /* Habit Input View Styles */
+@import "DesignSystem.css";
 
 .habit-input-view {
     -fx-background-color: #F1FAEE;
+    -fx-font-size: 14px; /* Minimum font size for accessibility */
 }
 
 .habit-scroll-pane {
@@ -194,7 +196,8 @@
 
 .nav-button:focused {
     -fx-border-color: #B8E6B8;
-    -fx-border-width: 2px;
+    -fx-border-width: 3px;
+    -fx-effect: dropshadow(gaussian, #B8E6B8, 6, 0.5, 0, 0);
 }
 
 .nav-button-active {

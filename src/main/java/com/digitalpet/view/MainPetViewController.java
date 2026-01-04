@@ -3,6 +3,7 @@ package com.digitalpet.view;
 import com.digitalpet.model.DigitalPet;
 import com.digitalpet.model.EvolutionStage;
 import com.digitalpet.model.PetMood;
+import com.digitalpet.service.AccessibilityService;
 import com.digitalpet.viewmodel.MainPetViewModel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -56,6 +57,7 @@ public class MainPetViewController implements Initializable {
         
         setupPropertyBindings();
         setupPetInteraction();
+        setupAccessibility();
         updateNavigationState();
     }
     
@@ -82,6 +84,69 @@ public class MainPetViewController implements Initializable {
         
         // Initial pet visual update
         updatePetVisual(viewModel.getEvolutionStage());
+    }
+    
+    /**
+     * Sets up accessibility features for all UI elements
+     * Requirements: 6.5, 10.2, 10.5, 9.5
+     */
+    private void setupAccessibility() {
+        // Enhance pet display area accessibility
+        petDisplayArea.setAccessibleText("Digital pet display area. Click or press Enter to interact with your pet.");
+        petDisplayArea.setAccessibleRole(javafx.scene.AccessibleRole.BUTTON);
+        petDisplayArea.setAccessibleHelp("Interactive pet that responds to your daily habits and evolves over time.");
+        
+        // Enhance labels with accessible text
+        AccessibilityService.enhanceLabelAccessibility(petNameLabel, "Pet name");
+        AccessibilityService.enhanceLabelAccessibility(evolutionStageLabel, "Current evolution stage");
+        AccessibilityService.enhanceLabelAccessibility(moodLabel, "Pet's current mood");
+        
+        // Enhance progress bars with accessible descriptions
+        AccessibilityService.enhanceProgressBarAccessibility(xpProgressBar, "Experience points progress");
+        AccessibilityService.enhanceProgressBarAccessibility(energyProgressBar, "Pet energy level");
+        
+        // Enhance navigation buttons
+        AccessibilityService.enhanceButtonAccessibility(petTabButton, "Pet view - currently active");
+        AccessibilityService.enhanceButtonAccessibility(habitsTabButton, "Navigate to daily habits input");
+        AccessibilityService.enhanceButtonAccessibility(statsTabButton, "Navigate to statistics and progress");
+        AccessibilityService.enhanceButtonAccessibility(achievementsTabButton, "Navigate to achievements");
+        
+        // Set up dynamic accessibility updates
+        setupDynamicAccessibility();
+    }
+    
+    /**
+     * Sets up dynamic accessibility updates that change based on state
+     */
+    private void setupDynamicAccessibility() {
+        // Update pet interaction accessibility based on evolution stage
+        viewModel.evolutionStageProperty().addListener((observable, oldStage, newStage) -> {
+            String stageDescription = switch (newStage) {
+                case EGG -> "Your pet is in the egg stage, waiting to hatch";
+                case BABY -> "Your pet is a baby, just starting its journey";
+                case TEEN -> "Your pet is a teenager, growing and learning";
+                case ADULT -> "Your pet is an adult, mature and accomplished";
+                case LEGENDARY -> "Your pet has reached legendary status!";
+            };
+            petDisplayArea.setAccessibleHelp(stageDescription + ". Click to interact.");
+        });
+        
+        // Update mood accessibility
+        viewModel.moodDisplayProperty().addListener((observable, oldMood, newMood) -> {
+            moodLabel.setAccessibleText("Pet mood: " + newMood);
+        });
+        
+        // Update XP progress accessibility
+        viewModel.xpProgressProperty().addListener((observable, oldProgress, newProgress) -> {
+            int percentage = (int) (newProgress.doubleValue() * 100);
+            xpProgressBar.setAccessibleHelp(String.format("Experience progress: %d%% to next evolution", percentage));
+        });
+        
+        // Update energy progress accessibility
+        viewModel.energyProgressProperty().addListener((observable, oldProgress, newProgress) -> {
+            int percentage = (int) (newProgress.doubleValue() * 100);
+            energyProgressBar.setAccessibleHelp(String.format("Pet energy level: %d%%", percentage));
+        });
     }
     
     /**
