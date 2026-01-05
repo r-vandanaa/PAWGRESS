@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.digitalpet.service.AnimationEngineProperties
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.234 s - in com.digitalpet.service.AnimationEngineProperties
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.243 s - in com.digitalpet.service.AnimationEngineProperties

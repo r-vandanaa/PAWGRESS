@@ -4,6 +4,7 @@ import com.digitalpet.model.DigitalPet;
 import com.digitalpet.model.EvolutionStage;
 import com.digitalpet.model.PetMood;
 import com.digitalpet.service.AccessibilityService;
+import com.digitalpet.service.NavigationManager;
 import com.digitalpet.viewmodel.MainPetViewModel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -259,20 +260,17 @@ public class MainPetViewController implements Initializable {
     
     @FXML
     private void onHabitsTabClicked() {
-        // TODO: Navigate to habits view when implemented
-        System.out.println("Navigate to Habits view");
+        NavigationManager.getInstance().navigateTo(NavigationManager.Screen.HABITS);
     }
     
     @FXML
     private void onStatsTabClicked() {
-        // TODO: Navigate to statistics view when implemented
-        System.out.println("Navigate to Stats view");
+        NavigationManager.getInstance().navigateTo(NavigationManager.Screen.STATISTICS);
     }
     
     @FXML
     private void onAchievementsTabClicked() {
-        // TODO: Navigate to achievements view when implemented
-        System.out.println("Navigate to Achievements view");
+        NavigationManager.getInstance().navigateTo(NavigationManager.Screen.ACHIEVEMENTS);
     }
     
     /**

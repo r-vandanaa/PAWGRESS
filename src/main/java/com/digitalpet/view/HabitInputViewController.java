@@ -2,6 +2,7 @@ package com.digitalpet.view;
 
 import com.digitalpet.model.DailyHabits;
 import com.digitalpet.service.AccessibilityService;
+import com.digitalpet.service.NavigationManager;
 import com.digitalpet.viewmodel.HabitInputViewModel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -460,8 +461,7 @@ public class HabitInputViewController implements Initializable {
     
     @FXML
     private void onPetTabClicked() {
-        // TODO: Navigate to pet view when navigation system is implemented
-        System.out.println("Navigate to Pet view");
+        NavigationManager.getInstance().navigateTo(NavigationManager.Screen.PET);
     }
     
     @FXML
@@ -472,14 +472,12 @@ public class HabitInputViewController implements Initializable {
     
     @FXML
     private void onStatsTabClicked() {
-        // TODO: Navigate to statistics view when implemented
-        System.out.println("Navigate to Stats view");
+        NavigationManager.getInstance().navigateTo(NavigationManager.Screen.STATISTICS);
     }
     
     @FXML
     private void onAchievementsTabClicked() {
-        // TODO: Navigate to achievements view when implemented
-        System.out.println("Navigate to Achievements view");
+        NavigationManager.getInstance().navigateTo(NavigationManager.Screen.ACHIEVEMENTS);
     }
     
     /**

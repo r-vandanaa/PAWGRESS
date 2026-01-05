@@ -24,6 +24,9 @@ public class MainPetViewModel {
     private final DigitalPet pet;
     private final PetInteractionSystem interactionSystem;
     
+    // Custom interaction handler for integration
+    private Runnable customInteractionHandler;
+    
     // Computed properties for UI binding
     private final StringProperty petName;
     private final ObjectProperty<EvolutionStage> evolutionStage;
@@ -247,6 +250,19 @@ public class MainPetViewModel {
      * Requirements: 1.5 - Pet responds to clicks with randomized animation within 0.5 seconds
      */
     public void handlePetInteraction() {
+        // Use custom handler if available, otherwise use default logic
+        if (customInteractionHandler != null) {
+            customInteractionHandler.run();
+        } else {
+            // Default interaction logic
+            handleDefaultInteraction();
+        }
+    }
+    
+    /**
+     * Handles default pet interaction when no custom handler is set
+     */
+    private void handleDefaultInteraction() {
         // Always record the interaction in the pet model
         pet.recordInteraction();
         
@@ -262,6 +278,21 @@ public class MainPetViewModel {
         }
         
         // UI will automatically update through property bindings
+    }
+    
+    /**
+     * Sets a custom interaction handler for integration with other systems
+     * @param handler The custom handler to use for pet interactions
+     */
+    public void setPetInteractionHandler(Runnable handler) {
+        this.customInteractionHandler = handler;
+    }
+    
+    /**
+     * Clears the custom interaction handler, reverting to default behavior
+     */
+    public void clearPetInteractionHandler() {
+        this.customInteractionHandler = null;
     }
     
     /**

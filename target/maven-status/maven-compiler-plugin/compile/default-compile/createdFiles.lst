@@ -2,6 +2,7 @@ com\digitalpet\model\PetMood.class
 com\digitalpet\viewmodel\StatisticsViewModel$XPDataPoint.class
 com\digitalpet\viewmodel\HabitInputViewModel$1.class
 com\digitalpet\service\AchievementDAO$AchievementStats.class
+com\digitalpet\view\BaseViewController.class
 com\digitalpet\viewmodel\package-info.class
 com\digitalpet\service\AnimationEngine$1.class
 com\digitalpet\service\DataExportImportService$ValidationResult.class
@@ -11,6 +12,7 @@ com\digitalpet\view\MainPetViewController.class
 com\digitalpet\service\DataExportImportService$HabitsExportData.class
 com\digitalpet\model\Environment$EnvironmentConfig.class
 com\digitalpet\view\HabitInputViewController$6.class
+com\digitalpet\service\DigitalPetIntegrationService.class
 com\digitalpet\viewmodel\HabitInputViewModel.class
 com\digitalpet\service\DailyHabitsDAO$DateRange.class
 com\digitalpet\service\ParticleSystem$1.class
@@ -19,17 +21,21 @@ com\digitalpet\view\package-info.class
 com\digitalpet\service\LocalDataStorage.class
 com\digitalpet\service\DataExportImportService$PetExportData.class
 com\digitalpet\DigitalPetApplication.class
+com\digitalpet\service\NavigationStateManager.class
 com\digitalpet\view\HabitInputViewController$5.class
 com\digitalpet\service\MoodSystem$1.class
 com\digitalpet\viewmodel\HabitInputViewModel$2.class
 com\digitalpet\service\DataExportImportService.class
+com\digitalpet\service\NavigationManager$1.class
 com\digitalpet\service\DailyHabitsDAO.class
 com\digitalpet\viewmodel\AchievementViewModel.class
 com\digitalpet\service\AchievementSystem.class
 com\digitalpet\viewmodel\StatisticsViewModel.class
+com\digitalpet\view\BaseViewController$1.class
 com\digitalpet\view\HabitInputViewController$2.class
 com\digitalpet\view\StatisticsViewController.class
 com\digitalpet\service\ParticleSystem$Particle.class
+com\digitalpet\service\ApplicationLifecycleManager.class
 com\digitalpet\service\DailyHabitsDAO$HabitTotals.class
 com\digitalpet\service\DataExportImportService$ExportMetadata.class
 com\digitalpet\service\DataExportImportService$AchievementExportData.class
@@ -37,6 +43,7 @@ com\digitalpet\model\UserProgress.class
 com\digitalpet\view\HabitInputViewController$1.class
 com\digitalpet\service\package-info.class
 com\digitalpet\service\SpriteAnimation.class
+com\digitalpet\service\NavigationManager$Screen.class
 com\digitalpet\viewmodel\StatisticsViewModel$HabitPerformance.class
 com\digitalpet\view\HabitInputViewController$4.class
 com\digitalpet\model\Achievement.class
@@ -54,6 +61,7 @@ com\digitalpet\service\PetInteractionSystem.class
 com\digitalpet\model\Environment$MoodEffectConfig.class
 com\digitalpet\model\AchievementCategory.class
 com\digitalpet\model\Environment.class
+com\digitalpet\service\NavigationManager.class
 com\digitalpet\service\AccessibilityService.class
 com\digitalpet\view\AchievementViewController.class
 com\digitalpet\view\HabitInputViewController.class

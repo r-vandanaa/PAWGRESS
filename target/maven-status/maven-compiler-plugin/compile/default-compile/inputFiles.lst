@@ -1,3 +1,4 @@
+C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\service\NavigationManager.java
 C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\model\AchievementCategory.java
 C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\view\package-info.java
 C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\service\XPSystem.java
@@ -5,6 +6,7 @@ C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\model\Environment.java
 C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\service\AchievementDAO.java
 C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\viewmodel\MainPetViewModel.java
 C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\service\AchievementSystem.java
+C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\service\ApplicationLifecycleManager.java
 C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\viewmodel\package-info.java
 C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\service\AccessibilityService.java
 C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\model\DailyHabits.java
@@ -18,10 +20,12 @@ C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\model\package-info.java
 C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\model\UserProgress.java
 C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\view\HabitInputViewController.java
 C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\service\SpriteAnimation.java
+C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\view\BaseViewController.java
 C:\Users\geeth\PAWGRESS\src\main\java\module-info.java
 C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\service\ParticleSystem.java
 C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\view\StatisticsViewController.java
 C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\service\MoodSystem.java
+C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\service\NavigationStateManager.java
 C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\viewmodel\StatisticsViewModel.java
 C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\service\DataExportImportService.java
 C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\model\Achievement.java
@@ -33,3 +37,4 @@ C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\viewmodel\AchievementViewMo
 C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\service\DigitalPetDAO.java
 C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\model\EvolutionStage.java
 C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\DigitalPetApplication.java
+C:\Users\geeth\PAWGRESS\src\main\java\com\digitalpet\service\DigitalPetIntegrationService.java

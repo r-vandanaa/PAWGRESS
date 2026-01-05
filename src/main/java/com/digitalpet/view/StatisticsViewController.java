@@ -3,6 +3,7 @@ package com.digitalpet.view;
 import com.digitalpet.model.DailyHabits;
 import com.digitalpet.model.DigitalPet;
 import com.digitalpet.model.PetMood;
+import com.digitalpet.service.NavigationManager;
 import com.digitalpet.viewmodel.StatisticsViewModel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -315,14 +316,12 @@ public class StatisticsViewController implements Initializable {
     
     @FXML
     private void onPetTabClicked() {
-        // TODO: Navigate to pet view when navigation system is implemented
-        System.out.println("Navigate to Pet view");
+        NavigationManager.getInstance().navigateTo(NavigationManager.Screen.PET);
     }
     
     @FXML
     private void onHabitsTabClicked() {
-        // TODO: Navigate to habits view when navigation system is implemented
-        System.out.println("Navigate to Habits view");
+        NavigationManager.getInstance().navigateTo(NavigationManager.Screen.HABITS);
     }
     
     @FXML
@@ -333,8 +332,7 @@ public class StatisticsViewController implements Initializable {
     
     @FXML
     private void onAchievementsTabClicked() {
-        // TODO: Navigate to achievements view when navigation system is implemented
-        System.out.println("Navigate to Achievements view");
+        NavigationManager.getInstance().navigateTo(NavigationManager.Screen.ACHIEVEMENTS);
     }
     
     /**

@@ -54,6 +54,9 @@ public class HabitInputViewModel {
     private DigitalPet currentPet;
     private final List<DailyHabits> habitHistory;
     
+    // Custom submission handler for integration
+    private java.util.function.Consumer<DailyHabits> customSubmissionHandler;
+    
     public HabitInputViewModel() {
         // Initialize properties
         this.studyHours = new SimpleDoubleProperty(this, "studyHours", 0.0);
@@ -228,6 +231,60 @@ public class HabitInputViewModel {
     }
     
     /**
+     * Submits habits synchronously for testing (bypasses JavaFX async processing)
+     */
+    public void submitHabitsSync() {
+        if (hasValidationErrors.get() || isSubmitting.get()) {
+            return;
+        }
+        
+        // Clear previous messages
+        clearMessages();
+        
+        // Set submitting state
+        isSubmitting.set(true);
+        
+        try {
+            // Create DailyHabits object from current values
+            DailyHabits habits = createDailyHabitsFromInput();
+            
+            // Use custom submission handler if available, otherwise use default logic
+            if (customSubmissionHandler != null) {
+                customSubmissionHandler.accept(habits);
+            } else {
+                // Default submission logic
+                handleDefaultSubmission(habits);
+            }
+            
+            // Show confirmation message
+            confirmationMessage.set("✅ Habits submitted successfully!");
+            showConfirmation.set(true);
+            
+            // Show XP gain message if using default handler
+            if (customSubmissionHandler == null) {
+                DailyHabits submittedHabits = createDailyHabitsFromInput();
+                double consistencyScore = xpSystem.calculateConsistencyScore(habitHistory, 7);
+                int xpGained = xpSystem.calculateXP(submittedHabits, consistencyScore);
+                
+                if (xpGained > 0) {
+                    xpGainMessage.set(String.format("🌟 +%d XP earned! (Completion: %.0f%%)", 
+                            xpGained, submittedHabits.getCompletionPercentage() * 100));
+                    showXpGain.set(true);
+                }
+            }
+            
+            // Reset form after successful submission
+            resetForm();
+            
+        } catch (Exception e) {
+            confirmationMessage.set("❌ Failed to submit habits: " + e.getMessage());
+            showConfirmation.set(true);
+        } finally {
+            isSubmitting.set(false);
+        }
+    }
+    
+    /**
      * Submits the current habit data and integrates with XP calculation
      */
     public void submitHabits() {
@@ -248,14 +305,13 @@ public class HabitInputViewModel {
                 // Create DailyHabits object from current values
                 DailyHabits habits = createDailyHabitsFromInput();
                 
-                // Add to history for consistency calculation
-                habitHistory.add(0, habits); // Add to beginning (most recent first)
-                
-                // Calculate consistency score based on recent history
-                double consistencyScore = xpSystem.calculateConsistencyScore(habitHistory, 7);
-                
-                // Calculate and award XP
-                int xpGained = xpSystem.awardXP(currentPet, habits, consistencyScore);
+                // Use custom submission handler if available, otherwise use default logic
+                if (customSubmissionHandler != null) {
+                    customSubmissionHandler.accept(habits);
+                } else {
+                    // Default submission logic
+                    handleDefaultSubmission(habits);
+                }
                 
                 // Simulate processing time for better UX
                 Thread.sleep(500);
@@ -266,11 +322,18 @@ public class HabitInputViewModel {
                     confirmationMessage.set("✅ Habits submitted successfully!");
                     showConfirmation.set(true);
                     
-                    // Show XP gain message
-                    if (xpGained > 0) {
-                        xpGainMessage.set(String.format("🌟 +%d XP earned! (Completion: %.0f%%)", 
-                                xpGained, habits.getCompletionPercentage() * 100));
-                        showXpGain.set(true);
+                    // Show XP gain message if using default handler
+                    if (customSubmissionHandler == null) {
+                        // XP calculation is done in default handler
+                        DailyHabits submittedHabits = createDailyHabitsFromInput();
+                        double consistencyScore = xpSystem.calculateConsistencyScore(habitHistory, 7);
+                        int xpGained = xpSystem.calculateXP(submittedHabits, consistencyScore);
+                        
+                        if (xpGained > 0) {
+                            xpGainMessage.set(String.format("🌟 +%d XP earned! (Completion: %.0f%%)", 
+                                    xpGained, submittedHabits.getCompletionPercentage() * 100));
+                            showXpGain.set(true);
+                        }
                     }
                     
                     // Reset form after successful submission
@@ -319,8 +382,33 @@ public class HabitInputViewModel {
     }
     
     /**
-     * Creates a DailyHabits object from current input values
+     * Handles default submission logic when no custom handler is set
      */
+    private void handleDefaultSubmission(DailyHabits habits) {
+        // Add to history for consistency calculation
+        habitHistory.add(0, habits); // Add to beginning (most recent first)
+        
+        // Calculate consistency score based on recent history
+        double consistencyScore = xpSystem.calculateConsistencyScore(habitHistory, 7);
+        
+        // Calculate and award XP
+        int xpGained = xpSystem.awardXP(currentPet, habits, consistencyScore);
+    }
+    
+    /**
+     * Sets a custom submission handler for integration with other systems
+     * @param handler The custom handler to use for habit submission
+     */
+    public void setCustomSubmissionHandler(java.util.function.Consumer<DailyHabits> handler) {
+        this.customSubmissionHandler = handler;
+    }
+    
+    /**
+     * Clears the custom submission handler, reverting to default behavior
+     */
+    public void clearCustomSubmissionHandler() {
+        this.customSubmissionHandler = null;
+    }
     private DailyHabits createDailyHabitsFromInput() {
         DailyHabits habits = new DailyHabits(LocalDate.now());
         

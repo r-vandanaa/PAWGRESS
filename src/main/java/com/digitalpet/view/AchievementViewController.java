@@ -2,6 +2,7 @@ package com.digitalpet.view;
 
 import com.digitalpet.model.Achievement;
 import com.digitalpet.model.AchievementCategory;
+import com.digitalpet.service.NavigationManager;
 import com.digitalpet.viewmodel.AchievementViewModel;
 import javafx.animation.*;
 import javafx.fxml.FXML;
@@ -475,20 +476,17 @@ public class AchievementViewController implements Initializable {
     
     @FXML
     private void onPetTabClicked() {
-        // Navigation will be handled by the main application controller
-        System.out.println("Navigate to Pet tab");
+        NavigationManager.getInstance().navigateTo(NavigationManager.Screen.PET);
     }
     
     @FXML
     private void onHabitsTabClicked() {
-        // Navigation will be handled by the main application controller
-        System.out.println("Navigate to Habits tab");
+        NavigationManager.getInstance().navigateTo(NavigationManager.Screen.HABITS);
     }
     
     @FXML
     private void onStatsTabClicked() {
-        // Navigation will be handled by the main application controller
-        System.out.println("Navigate to Stats tab");
+        NavigationManager.getInstance().navigateTo(NavigationManager.Screen.STATISTICS);
     }
     
     @FXML

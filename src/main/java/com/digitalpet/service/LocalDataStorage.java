@@ -323,6 +323,171 @@ public class LocalDataStorage {
     }
     
     /**
+     * Initializes the database (public method for lifecycle manager)
+     */
+    public void initialize() {
+        // Database is already initialized in constructor
+        // This method is for explicit initialization if needed
+        if (connection == null) {
+            initializeDatabase();
+        }
+    }
+    
+    /**
+     * Saves a digital pet to the database
+     */
+    public void savePet(DigitalPet pet) {
+        if (pet == null) return;
+        
+        try {
+            String sql = """
+                INSERT OR REPLACE INTO digital_pet 
+                (id, name, current_stage, current_mood, experience_points, energy_level, last_interaction, updated_date)
+                VALUES (1, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+                """;
+            
+            try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+                stmt.setString(1, pet.getName());
+                stmt.setString(2, pet.getCurrentStage().name());
+                stmt.setString(3, pet.getCurrentMood().name());
+                stmt.setInt(4, pet.getExperiencePoints());
+                stmt.setInt(5, pet.getEnergyLevel());
+                stmt.setString(6, pet.getLastInteraction().toString());
+                
+                stmt.executeUpdate();
+            }
+        } catch (SQLException e) {
+            System.err.println("Failed to save pet: " + e.getMessage());
+        }
+    }
+    
+    /**
+     * Loads a digital pet from the database
+     */
+    public DigitalPet loadPet() {
+        try {
+            String sql = "SELECT * FROM digital_pet WHERE id = 1";
+            
+            try (PreparedStatement stmt = connection.prepareStatement(sql);
+                 ResultSet rs = stmt.executeQuery()) {
+                
+                if (rs.next()) {
+                    DigitalPet pet = new DigitalPet(rs.getString("name"));
+                    pet.setCurrentStage(EvolutionStage.valueOf(rs.getString("current_stage")));
+                    pet.setCurrentMood(PetMood.valueOf(rs.getString("current_mood")));
+                    pet.setExperiencePoints(rs.getInt("experience_points"));
+                    pet.setEnergyLevel(rs.getInt("energy_level"));
+                    pet.setLastInteraction(LocalDateTime.parse(rs.getString("last_interaction")));
+                    
+                    return pet;
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Failed to load pet: " + e.getMessage());
+        }
+        
+        return null;
+    }
+    
+    /**
+     * Saves habit history to the database
+     */
+    public void saveHabitHistory(List<DailyHabits> habitHistory) {
+        if (habitHistory == null || habitHistory.isEmpty()) return;
+        
+        try {
+            String sql = """
+                INSERT OR REPLACE INTO daily_habits 
+                (date, study_hours, water_intake, steps_taken, sleep_hours, money_spent, goals_completed, completion_percentage, updated_date)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+                """;
+            
+            try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+                for (DailyHabits habits : habitHistory) {
+                    stmt.setString(1, habits.getDate().toString());
+                    stmt.setInt(2, habits.getStudyHours());
+                    stmt.setDouble(3, habits.getWaterIntake());
+                    stmt.setInt(4, habits.getStepsTaken());
+                    stmt.setDouble(5, habits.getSleepHours());
+                    stmt.setDouble(6, habits.getMoneySpent());
+                    stmt.setInt(7, habits.getGoalsCompleted());
+                    stmt.setDouble(8, habits.getCompletionPercentage());
+                    
+                    stmt.addBatch();
+                }
+                
+                stmt.executeBatch();
+            }
+        } catch (SQLException e) {
+            System.err.println("Failed to save habit history: " + e.getMessage());
+        }
+    }
+    
+    /**
+     * Loads habit history from the database
+     */
+    public List<DailyHabits> loadHabitHistory() {
+        List<DailyHabits> habitHistory = new ArrayList<>();
+        
+        try {
+            String sql = "SELECT * FROM daily_habits ORDER BY date DESC";
+            
+            try (PreparedStatement stmt = connection.prepareStatement(sql);
+                 ResultSet rs = stmt.executeQuery()) {
+                
+                while (rs.next()) {
+                    DailyHabits habits = new DailyHabits(LocalDate.parse(rs.getString("date")));
+                    habits.setStudyHours(rs.getInt("study_hours"));
+                    habits.setWaterIntake(rs.getDouble("water_intake"));
+                    habits.setStepsTaken(rs.getInt("steps_taken"));
+                    habits.setSleepHours(rs.getDouble("sleep_hours"));
+                    habits.setMoneySpent(rs.getDouble("money_spent"));
+                    habits.setGoalsCompleted(rs.getInt("goals_completed"));
+                    
+                    habitHistory.add(habits);
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Failed to load habit history: " + e.getMessage());
+        }
+        
+        return habitHistory;
+    }
+    
+    /**
+     * Flushes all pending writes to disk
+     */
+    public void flush() {
+        try {
+            if (connection != null && !connection.isClosed()) {
+                // Force WAL checkpoint to write to main database
+                try (Statement stmt = connection.createStatement()) {
+                    stmt.execute("PRAGMA wal_checkpoint(FULL)");
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Failed to flush database: " + e.getMessage());
+        }
+    }
+    
+    /**
+     * Forces close of database connection (for emergency shutdown)
+     */
+    public void forceClose() {
+        try {
+            if (backupScheduler != null && !backupScheduler.isShutdown()) {
+                backupScheduler.shutdownNow();
+            }
+            
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+            }
+        } catch (SQLException e) {
+            // Ignore errors during force close
+        }
+    }
+    
+    /**
      * Closes the database connection and shuts down the backup scheduler
      */
     public void close() {

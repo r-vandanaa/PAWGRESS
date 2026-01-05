@@ -36,6 +36,13 @@ public class StatisticsViewModel {
     
     /**
      * Creates a new StatisticsViewModel
+     */
+    public StatisticsViewModel() {
+        this(new DigitalPet("Sample Pet"));
+    }
+    
+    /**
+     * Creates a new StatisticsViewModel
      * @param pet The digital pet to track statistics for
      */
     public StatisticsViewModel(DigitalPet pet) {
@@ -393,6 +400,32 @@ public class StatisticsViewModel {
     
     public String getMoodSummaryText() {
         return moodSummaryText.get();
+    }
+    
+    /**
+     * Sets data sources for the statistics view
+     * @param pet The digital pet
+     * @param habitHistory The habit history list
+     */
+    public void setDataSources(DigitalPet pet, List<DailyHabits> habitHistory) {
+        // Update internal data sources
+        if (habitHistory != null) {
+            this.habitHistory.clear();
+            this.habitHistory.addAll(habitHistory);
+        }
+        
+        // Clear caches and refresh
+        clearCache();
+        updateSummaryTexts();
+    }
+    
+    /**
+     * Refreshes data from current sources
+     * @param pet The digital pet
+     * @param habitHistory The habit history list
+     */
+    public void refreshData(DigitalPet pet, List<DailyHabits> habitHistory) {
+        setDataSources(pet, habitHistory);
     }
     
     // Data classes

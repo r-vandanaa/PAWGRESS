@@ -64,20 +64,30 @@ public class AnimationEngine {
      * Sets up FPS monitoring and performance optimization
      */
     private void setupPerformanceMonitoring() {
-        Timeline fpsMonitor = new Timeline(new KeyFrame(Duration.seconds(1), e -> updateFpsCounter()));
-        fpsMonitor.setCycleCount(Timeline.INDEFINITE);
-        fpsMonitor.play();
+        try {
+            Timeline fpsMonitor = new Timeline(new KeyFrame(Duration.seconds(1), e -> updateFpsCounter()));
+            fpsMonitor.setCycleCount(Timeline.INDEFINITE);
+            fpsMonitor.play();
+        } catch (Exception e) {
+            // In headless mode, skip FPS monitoring
+            System.out.println("FPS monitoring disabled (headless mode): " + e.getMessage());
+        }
     }
     
     /**
      * Initializes animation object pools for memory efficiency
      */
     private void setupAnimationPools() {
-        // Pre-populate pools with commonly used animations
-        for (int i = 0; i < 10; i++) {
-            timelinePool.offer(new Timeline());
-            fadePool.offer(new FadeTransition());
-            scalePool.offer(new ScaleTransition());
+        try {
+            // Pre-populate pools with commonly used animations
+            for (int i = 0; i < 10; i++) {
+                timelinePool.offer(new Timeline());
+                fadePool.offer(new FadeTransition());
+                scalePool.offer(new ScaleTransition());
+            }
+        } catch (Exception e) {
+            // In headless mode, skip animation pool setup
+            System.out.println("Animation pools disabled (headless mode): " + e.getMessage());
         }
     }
     
