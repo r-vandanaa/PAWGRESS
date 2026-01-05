@@ -354,6 +354,15 @@ public class PetInteractionSystem {
      * @param onComplete Callback when celebration completes
      */
     private void playCelebrationSequence(Node petNode, Duration duration, Runnable onComplete) {
+        // Guard against null petNode (can happen during initialization or headless mode)
+        if (petNode == null) {
+            // Still run the completion callback
+            if (onComplete != null) {
+                onComplete.run();
+            }
+            return;
+        }
+        
         // Disable interactions during celebration
         interactionEnabled.set(false);
         

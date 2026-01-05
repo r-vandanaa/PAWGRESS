@@ -27,16 +27,27 @@ public class DigitalPetApplication extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
+            System.out.println("Starting Digital Pet Evolution application...");
+            
             // Initialize integration service first
+            System.out.println("Initializing integration service...");
             integrationService = new DigitalPetIntegrationService();
+            System.out.println("Integration service initialized successfully");
             
             // Initialize lifecycle manager
+            System.out.println("Initializing lifecycle manager...");
             lifecycleManager = new ApplicationLifecycleManager(integrationService);
+            System.out.println("Lifecycle manager initialized successfully");
             
             // Handle startup sequence
+            System.out.println("Starting application lifecycle...");
             lifecycleManager.handleStartup().thenAccept(success -> {
+                System.out.println("Startup completed with result: " + success);
                 if (success) {
-                    Platform.runLater(() -> initializeUI(primaryStage));
+                    Platform.runLater(() -> {
+                        System.out.println("Initializing UI...");
+                        initializeUI(primaryStage);
+                    });
                 } else {
                     Platform.runLater(() -> {
                         System.err.println("Application startup failed");
@@ -46,6 +57,7 @@ public class DigitalPetApplication extends Application {
             }).exceptionally(throwable -> {
                 Platform.runLater(() -> {
                     System.err.println("Application startup error: " + throwable.getMessage());
+                    throwable.printStackTrace();
                     Platform.exit();
                 });
                 return null;
@@ -63,6 +75,7 @@ public class DigitalPetApplication extends Application {
      */
     private void initializeUI(Stage primaryStage) {
         try {
+            System.out.println("Configuring primary stage...");
             // Configure primary stage
             primaryStage.setTitle("Digital Pet Evolution");
             primaryStage.setWidth(800);
@@ -70,10 +83,12 @@ public class DigitalPetApplication extends Application {
             primaryStage.setMinWidth(600);
             primaryStage.setMinHeight(500);
             
+            System.out.println("Initializing navigation manager...");
             // Initialize navigation manager
             navigationManager = NavigationManager.getInstance();
             navigationManager.initialize(primaryStage);
             
+            System.out.println("Setting up ViewModels...");
             // Inject ViewModels into navigation manager
             navigationManager.setViewModels(
                 integrationService.getMainPetViewModel(),
@@ -82,6 +97,7 @@ public class DigitalPetApplication extends Application {
                 integrationService.getStatisticsViewModel()
             );
             
+            System.out.println("Setting up keyboard shortcuts...");
             // Setup keyboard shortcuts for accessibility
             navigationManager.setupKeyboardShortcuts();
             
@@ -111,8 +127,10 @@ public class DigitalPetApplication extends Application {
                 });
             });
             
+            System.out.println("Showing application window...");
             // Show the stage
             primaryStage.show();
+            System.out.println("Digital Pet Evolution application is now running!");
             
             // Restore navigation state if available
             // In a full implementation, this would load from preferences

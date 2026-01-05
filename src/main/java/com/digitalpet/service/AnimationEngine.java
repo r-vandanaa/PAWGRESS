@@ -206,6 +206,11 @@ public class AnimationEngine {
      * @param duration Duration of the effect
      */
     public void startCelebrationEffect(Node parentNode, Duration duration) {
+        // Guard against null parentNode (can happen during initialization or headless mode)
+        if (parentNode == null) {
+            return;
+        }
+        
         if (reducedMotionEnabled.get()) {
             // Simple glow effect for reduced motion
             Glow glow = new Glow(0.8);
