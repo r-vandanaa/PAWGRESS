@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.digitalpet.view.MainPetViewController">
+<BorderPane styleClass="main-pet-view" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.digitalpet.view.MainPetViewController">
    <center>
       <VBox alignment="CENTER" spacing="20.0" styleClass="main-content">
          <padding>
@@ -114,8 +114,4 @@
          </Button>
       </HBox>
    </bottom>
-   
-   <styleClass>
-      <String fx:value="main-pet-view" />
-   </styleClass>
 </BorderPane>

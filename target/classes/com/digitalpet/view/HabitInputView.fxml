@@ -5,265 +5,109 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.digitalpet.view.HabitInputViewController">
+<BorderPane styleClass="habit-input-view" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.digitalpet.view.HabitInputViewController">
    <center>
       <ScrollPane fitToWidth="true" styleClass="habit-scroll-pane">
-         <VBox alignment="TOP_CENTER" spacing="20.0" styleClass="habit-input-content">
+         <VBox alignment="CENTER" spacing="20.0">
             <padding>
                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
             </padding>
             
-            <!-- Header -->
-            <VBox alignment="CENTER" spacing="10.0">
-               <Label styleClass="habit-input-title" text="Daily Habits">
-                  <font>
-                     <Font name="System Bold" size="24.0" />
-                  </font>
-               </Label>
-               <Label styleClass="habit-input-subtitle" text="Track your daily activities to help your pet grow!">
-                  <font>
-                     <Font size="14.0" />
-                  </font>
-               </Label>
+            <Label text="Daily Habits" styleClass="habit-input-title">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            
+            <!-- Study Hours -->
+            <VBox spacing="5.0">
+               <Label text="Study Hours" />
+               <Slider fx:id="studyHoursSlider" min="0" max="16" value="0" />
+               <Label fx:id="studyHoursValue" text="0 hours" />
+               <Label fx:id="studyHoursError" text="" visible="false" />
             </VBox>
             
-            <!-- Habit Input Form -->
-            <VBox spacing="25.0" styleClass="habit-form">
-               
-               <!-- Study Hours -->
-               <VBox spacing="8.0" styleClass="habit-category">
-                  <HBox alignment="CENTER_LEFT" spacing="10.0">
-                     <Label styleClass="habit-icon" text="📚">
-                        <font>
-                           <Font size="20.0" />
-                        </font>
-                     </Label>
-                     <Label styleClass="habit-label" text="Study Hours">
-                        <font>
-                           <Font name="System Bold" size="16.0" />
-                        </font>
-                     </Label>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" spacing="15.0">
-                     <Slider fx:id="studyHoursSlider" blockIncrement="1.0" majorTickUnit="4.0" max="16.0" min="0.0" minorTickCount="3" showTickLabels="true" showTickMarks="true" styleClass="habit-slider" value="0.0" HBox.hgrow="ALWAYS" />
-                     <Label fx:id="studyHoursValue" styleClass="habit-value" text="0 hours">
-                        <font>
-                           <Font size="14.0" />
-                        </font>
-                     </Label>
-                  </HBox>
-                  <Label fx:id="studyHoursError" styleClass="error-message" text="" visible="false">
-                     <font>
-                        <Font size="12.0" />
-                     </font>
-                  </Label>
-               </VBox>
-               
-               <!-- Water Intake -->
-               <VBox spacing="8.0" styleClass="habit-category">
-                  <HBox alignment="CENTER_LEFT" spacing="10.0">
-                     <Label styleClass="habit-icon" text="💧">
-                        <font>
-                           <Font size="20.0" />
-                        </font>
-                     </Label>
-                     <Label styleClass="habit-label" text="Water Intake">
-                        <font>
-                           <Font name="System Bold" size="16.0" />
-                        </font>
-                     </Label>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" spacing="15.0">
-                     <Slider fx:id="waterIntakeSlider" blockIncrement="0.1" majorTickUnit="1.0" max="5.0" min="0.0" minorTickCount="9" showTickLabels="true" showTickMarks="true" styleClass="habit-slider" value="0.0" HBox.hgrow="ALWAYS" />
-                     <Label fx:id="waterIntakeValue" styleClass="habit-value" text="0.0 L">
-                        <font>
-                           <Font size="14.0" />
-                        </font>
-                     </Label>
-                  </HBox>
-                  <Label fx:id="waterIntakeError" styleClass="error-message" text="" visible="false">
-                     <font>
-                        <Font size="12.0" />
-                     </font>
-                  </Label>
-               </VBox>
-               
-               <!-- Steps Taken -->
-               <VBox spacing="8.0" styleClass="habit-category">
-                  <HBox alignment="CENTER_LEFT" spacing="10.0">
-                     <Label styleClass="habit-icon" text="👟">
-                        <font>
-                           <Font size="20.0" />
-                        </font>
-                     </Label>
-                     <Label styleClass="habit-label" text="Steps Taken">
-                        <font>
-                           <Font name="System Bold" size="16.0" />
-                        </font>
-                     </Label>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" spacing="15.0">
-                     <Slider fx:id="stepsTakenSlider" blockIncrement="1000.0" majorTickUnit="10000.0" max="50000.0" min="0.0" minorTickCount="9" showTickLabels="true" showTickMarks="true" styleClass="habit-slider" value="0.0" HBox.hgrow="ALWAYS" />
-                     <Label fx:id="stepsTakenValue" styleClass="habit-value" text="0 steps">
-                        <font>
-                           <Font size="14.0" />
-                        </font>
-                     </Label>
-                  </HBox>
-                  <Label fx:id="stepsTakenError" styleClass="error-message" text="" visible="false">
-                     <font>
-                        <Font size="12.0" />
-                     </font>
-                  </Label>
-               </VBox>
-               
-               <!-- Sleep Hours -->
-               <VBox spacing="8.0" styleClass="habit-category">
-                  <HBox alignment="CENTER_LEFT" spacing="10.0">
-                     <Label styleClass="habit-icon" text="😴">
-                        <font>
-                           <Font size="20.0" />
-                        </font>
-                     </Label>
-                     <Label styleClass="habit-label" text="Sleep Hours">
-                        <font>
-                           <Font name="System Bold" size="16.0" />
-                        </font>
-                     </Label>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" spacing="15.0">
-                     <Slider fx:id="sleepHoursSlider" blockIncrement="0.5" majorTickUnit="6.0" max="24.0" min="0.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" styleClass="habit-slider" value="0.0" HBox.hgrow="ALWAYS" />
-                     <Label fx:id="sleepHoursValue" styleClass="habit-value" text="0.0 hours">
-                        <font>
-                           <Font size="14.0" />
-                        </font>
-                     </Label>
-                  </HBox>
-                  <Label fx:id="sleepHoursError" styleClass="error-message" text="" visible="false">
-                     <font>
-                        <Font size="12.0" />
-                     </font>
-                  </Label>
-               </VBox>
-               
-               <!-- Money Spent -->
-               <VBox spacing="8.0" styleClass="habit-category">
-                  <HBox alignment="CENTER_LEFT" spacing="10.0">
-                     <Label styleClass="habit-icon" text="💰">
-                        <font>
-                           <Font size="20.0" />
-                        </font>
-                     </Label>
-                     <Label styleClass="habit-label" text="Money Spent">
-                        <font>
-                           <Font name="System Bold" size="16.0" />
-                        </font>
-                     </Label>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" spacing="15.0">
-                     <Slider fx:id="moneySpentSlider" blockIncrement="10.0" majorTickUnit="200.0" max="1000.0" min="0.0" minorTickCount="9" showTickLabels="true" showTickMarks="true" styleClass="habit-slider" value="0.0" HBox.hgrow="ALWAYS" />
-                     <Label fx:id="moneySpentValue" styleClass="habit-value" text="$0.00">
-                        <font>
-                           <Font size="14.0" />
-                        </font>
-                     </Label>
-                  </HBox>
-                  <Label fx:id="moneySpentError" styleClass="error-message" text="" visible="false">
-                     <font>
-                        <Font size="12.0" />
-                     </font>
-                  </Label>
-               </VBox>
-               
-               <!-- Goals Completed -->
-               <VBox spacing="8.0" styleClass="habit-category">
-                  <HBox alignment="CENTER_LEFT" spacing="10.0">
-                     <Label styleClass="habit-icon" text="🎯">
-                        <font>
-                           <Font size="20.0" />
-                        </font>
-                     </Label>
-                     <Label styleClass="habit-label" text="Goals Completed">
-                        <font>
-                           <Font name="System Bold" size="16.0" />
-                        </font>
-                     </Label>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" spacing="15.0">
-                     <Slider fx:id="goalsCompletedSlider" blockIncrement="1.0" majorTickUnit="2.0" max="10.0" min="0.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" styleClass="habit-slider" value="0.0" HBox.hgrow="ALWAYS" />
-                     <Label fx:id="goalsCompletedValue" styleClass="habit-value" text="0 goals">
-                        <font>
-                           <Font size="14.0" />
-                        </font>
-                     </Label>
-                  </HBox>
-                  <Label fx:id="goalsCompletedError" styleClass="error-message" text="" visible="false">
-                     <font>
-                        <Font size="12.0" />
-                     </Label>
-               </VBox>
+            <!-- Water Intake -->
+            <VBox spacing="5.0">
+               <Label text="Water Intake" />
+               <Slider fx:id="waterIntakeSlider" min="0" max="5" value="0" />
+               <Label fx:id="waterIntakeValue" text="0.0 L" />
+               <Label fx:id="waterIntakeError" text="" visible="false" />
             </VBox>
             
-            <!-- Submit Button and Feedback -->
-            <VBox alignment="CENTER" spacing="15.0" styleClass="submit-section">
-               <Button fx:id="submitButton" mnemonicParsing="false" onAction="#onSubmitHabits" styleClass="submit-button" text="Submit Today's Habits">
-                  <font>
-                     <Font name="System Bold" size="16.0" />
-                  </font>
-               </Button>
-               
-               <!-- Confirmation Feedback -->
-               <Label fx:id="confirmationMessage" styleClass="confirmation-message" text="" visible="false">
-                  <font>
-                     <Font size="14.0" />
-                  </font>
-               </Label>
-               
-               <!-- XP Gain Display -->
-               <Label fx:id="xpGainMessage" styleClass="xp-gain-message" text="" visible="false">
-                  <font>
-                     <Font name="System Bold" size="14.0" />
-                  </font>
-               </Label>
+            <!-- Steps Taken -->
+            <VBox spacing="5.0">
+               <Label text="Steps Taken" />
+               <Slider fx:id="stepsTakenSlider" min="0" max="50000" value="0" />
+               <Label fx:id="stepsTakenValue" text="0 steps" />
+               <Label fx:id="stepsTakenError" text="" visible="false" />
             </VBox>
+            
+            <!-- Sleep Hours -->
+            <VBox spacing="5.0">
+               <Label text="Sleep Hours" />
+               <Slider fx:id="sleepHoursSlider" min="0" max="24" value="0" />
+               <Label fx:id="sleepHoursValue" text="0.0 hours" />
+               <Label fx:id="sleepHoursError" text="" visible="false" />
+            </VBox>
+            
+            <!-- Money Spent -->
+            <VBox spacing="5.0">
+               <Label text="Money Spent" />
+               <Slider fx:id="moneySpentSlider" min="0" max="1000" value="0" />
+               <Label fx:id="moneySpentValue" text="\$0.00" />
+               <Label fx:id="moneySpentError" text="" visible="false" />
+            </VBox>
+            
+            <!-- Goals Completed -->
+            <VBox spacing="5.0">
+               <Label text="Goals Completed" />
+               <Slider fx:id="goalsCompletedSlider" min="0" max="10" value="0" />
+               <Label fx:id="goalsCompletedValue" text="0 goals" />
+               <Label fx:id="goalsCompletedError" text="" visible="false" />
+            </VBox>
+            
+            <Button fx:id="submitButton" text="Submit Habits" onAction="#onSubmitHabits">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            
+            <Label fx:id="confirmationMessage" text="" visible="false" />
+            <Label fx:id="xpGainMessage" text="" visible="false" />
          </VBox>
       </ScrollPane>
    </center>
    
-   <!-- Bottom Navigation Bar -->
    <bottom>
-      <HBox fx:id="bottomNavigationBar" alignment="CENTER" spacing="0.0" styleClass="bottom-navigation">
+      <HBox alignment="CENTER" spacing="0.0" styleClass="bottom-navigation">
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
          
-         <Button fx:id="petTabButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPetTabClicked" styleClass="nav-button" text="Pet" HBox.hgrow="ALWAYS">
+         <Button fx:id="petTabButton" text="Pet" onAction="#onPetTabClicked">
             <font>
                <Font size="14.0" />
             </font>
          </Button>
          
-         <Button fx:id="habitsTabButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHabitsTabClicked" styleClass="nav-button, nav-button-active" text="Habits" HBox.hgrow="ALWAYS">
+         <Button fx:id="habitsTabButton" text="Habits" onAction="#onHabitsTabClicked">
             <font>
                <Font size="14.0" />
             </font>
          </Button>
          
-         <Button fx:id="statsTabButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onStatsTabClicked" styleClass="nav-button" text="Stats" HBox.hgrow="ALWAYS">
+         <Button fx:id="statsTabButton" text="Stats" onAction="#onStatsTabClicked">
             <font>
                <Font size="14.0" />
             </font>
          </Button>
          
-         <Button fx:id="achievementsTabButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAchievementsTabClicked" styleClass="nav-button" text="Awards" HBox.hgrow="ALWAYS">
+         <Button fx:id="achievementsTabButton" text="Awards" onAction="#onAchievementsTabClicked">
             <font>
                <Font size="14.0" />
             </font>
          </Button>
       </HBox>
    </bottom>
-   
-   <styleClass>
-      <String fx:value="habit-input-view" />
-   </styleClass>
 </BorderPane>

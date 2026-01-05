@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane styleClass="habit-input-view" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.digitalpet.view.HabitInputViewController">
+   <center>
+      <VBox alignment="CENTER" spacing="20.0">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         
+         <Label text="Daily Habits" styleClass="habit-input-title">
+            <font>
+               <Font name="System Bold" size="24.0" />
+            </font>
+         </Label>
+         
+         <Label text="Simplified habits view for testing">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Label>
+         
+         <Button fx:id="submitButton" text="Submit Habits" onAction="#onSubmitHabits">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Button>
+      </VBox>
+   </center>
+   
+   <bottom>
+      <HBox fx:id="bottomNavigationBar" alignment="CENTER" spacing="0.0" styleClass="bottom-navigation">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         
+         <Button fx:id="petTabButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPetTabClicked" styleClass="nav-button" text="Pet">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+         
+         <Button fx:id="habitsTabButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHabitsTabClicked" styleClass="nav-button, nav-button-active" text="Habits">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+         
+         <Button fx:id="statsTabButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onStatsTabClicked" styleClass="nav-button" text="Stats">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+         
+         <Button fx:id="achievementsTabButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAchievementsTabClicked" styleClass="nav-button" text="Awards">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+      </HBox>
+   </bottom>
+</BorderPane>

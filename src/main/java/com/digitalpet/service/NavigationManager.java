@@ -51,7 +51,7 @@ public class NavigationManager {
     }
     
     // Navigation state
-    private final ObjectProperty<Screen> currentScreen = new SimpleObjectProperty<>(Screen.PET);
+    private final ObjectProperty<Screen> currentScreen = new SimpleObjectProperty<>(null);
     private final Stack<Screen> navigationHistory = new Stack<>();
     
     // UI components
@@ -82,6 +82,7 @@ public class NavigationManager {
     private NavigationManager() {
         // Initialize navigation history with default screen
         navigationHistory.push(Screen.PET);
+        // Don't set currentScreen here - let initialize() handle it
     }
     
     /**
@@ -117,10 +118,10 @@ public class NavigationManager {
         // Apply saved navigation preferences
         NavigationStateManager.getInstance().applyToNavigationManager(this);
         
-        // If no saved state, load initial screen
-        if (currentScreen.get() == null) {
-            navigateToScreen(Screen.PET, false);
-        }
+        // Always load the initial screen (PET screen by default)
+        Screen initialScreen = Screen.PET;
+        System.out.println("Loading initial screen: " + initialScreen);
+        navigateToScreen(initialScreen, false);
         
         // Listen for screen changes to update state manager
         currentScreen.addListener((observable, oldScreen, newScreen) -> {
@@ -157,28 +158,37 @@ public class NavigationManager {
      * @param animate Whether to animate the transition
      */
     private void navigateToScreen(Screen targetScreen, boolean animate) {
+        System.out.println("navigateToScreen called: " + targetScreen + ", animate: " + animate);
+        System.out.println("Current screen: " + currentScreen.get());
+        
         if (targetScreen == currentScreen.get()) {
+            System.out.println("Already on target screen, skipping navigation");
             return; // Already on target screen
         }
         
         // Load target screen
+        System.out.println("Loading target screen...");
         Parent targetNode = loadScreen(targetScreen);
         if (targetNode == null) {
             System.err.println("Failed to load screen: " + targetScreen);
             return;
         }
+        System.out.println("Target screen loaded successfully");
         
         // Update navigation history
         updateNavigationHistory(targetScreen);
         
         // Perform transition
         if (animate && !rootContainer.getChildren().isEmpty()) {
+            System.out.println("Performing animated transition");
             performAnimatedTransition(targetNode, targetScreen);
         } else {
+            System.out.println("Performing direct replacement");
             // Direct replacement without animation
             rootContainer.getChildren().clear();
             rootContainer.getChildren().add(targetNode);
             currentScreen.set(targetScreen);
+            System.out.println("Screen transition completed");
         }
     }
     
@@ -220,16 +230,28 @@ public class NavigationManager {
      * @return The loaded Parent node, or null if loading failed
      */
     private Parent loadScreen(Screen screen) {
+        System.out.println("Loading screen: " + screen + " (" + screen.getFxmlFile() + ")");
+        
         // Check cache first
         if (screenCache.containsKey(screen)) {
+            System.out.println("Screen found in cache: " + screen);
             return screenCache.get(screen);
         }
         
         try {
             // Load FXML
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/com/digitalpet/view/" + screen.getFxmlFile()));
+            String resourcePath = "/com/digitalpet/view/" + screen.getFxmlFile();
+            System.out.println("Loading FXML from: " + resourcePath);
+            
+            loader.setLocation(getClass().getResource(resourcePath));
+            if (loader.getLocation() == null) {
+                System.err.println("FXML resource not found: " + resourcePath);
+                return null;
+            }
+            
             Parent root = loader.load();
+            System.out.println("Successfully loaded FXML for screen: " + screen);
             
             // Cache the screen and controller
             screenCache.put(screen, root);
@@ -242,6 +264,7 @@ public class NavigationManager {
             
         } catch (IOException e) {
             System.err.println("Error loading screen " + screen + ": " + e.getMessage());
+            e.printStackTrace();
             return null;
         }
     }

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.digitalpet.view.AchievementViewController">
+<BorderPane styleClass="achievement-view" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.digitalpet.view.AchievementViewController">
    <center>
       <VBox spacing="20.0" styleClass="main-content">
          <padding>
@@ -142,9 +142,4 @@
          </Button>
       </HBox>
    </bottom>
-   
-   <styleClass>
-      <String fx:value="achievement-view" />
-   </styleClass>
 </BorderPane>
-</content>
